@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1698634943 source:c:\users\verónica\desktop\valen\tp final c-git\tp final\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Clientes.h"
+
+1698634943 c:\users\verónica\desktop\valen\tp final c-git\tp final\clientes.h
+
+1698636965 source:c:\users\verónica\desktop\valen\tp final c-git\tp final\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Autos.h"
+
+1698639778 source:c:\users\verónica\desktop\valen\tp final c-git\tp final\autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Autos.h"
+
+1698639794 c:\users\verónica\desktop\valen\tp final c-git\tp final\autos.h
+
