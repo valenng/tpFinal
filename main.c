@@ -74,6 +74,7 @@ case 1:
         sleep(3);
         system("cls");
         printf("el usuario no existe");
+        sleep(3);
 
     usuario();
 
@@ -84,6 +85,7 @@ case 1:
 case 2:
 
     crearNuevoUsuario();
+    menu();
 
     break;
 
