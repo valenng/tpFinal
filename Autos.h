@@ -12,6 +12,7 @@ typedef struct
     int capacidad;
     float kilometrosAcumulados;
     int disponibilidad;  ///1- DISPONIBLE / 0- NO DISPONIBLE
+
 }stAuto ;
 
 void mostrarMarcasOModelos(char *[]) ;
