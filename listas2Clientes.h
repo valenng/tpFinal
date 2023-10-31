@@ -1,5 +1,6 @@
 #ifndef LISTAS2CLIENTES_H_INCLUDED
 #define LISTAS2CLIENTES_H_INCLUDED
+#include "Clientes.h"
 
 typedef struct
 {

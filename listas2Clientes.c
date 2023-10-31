@@ -14,7 +14,7 @@ nodo2Clientes * initLista2Cliente()
 nodo2Clientes * crearNodo2Cliente(stClientes cliente)
 {
 
-    nodo2Clientes nuevoCliente = (nodo2Clientes * )malloc(sizeof(nodo2Clientes));
+    nodo2Clientes* nuevoCliente = (nodo2Clientes * )malloc(sizeof(nodo2Clientes));
     nuevoCliente->cliente = cliente;
     nuevoCliente->anterior = NULL;
     nuevoCliente->siguiente = NULL;
@@ -30,7 +30,7 @@ nodo2Clientes* buscarDNIlista2Cliente(nodo2Clientes* lista, int DNI)
 
     while (actual != NULL)
     {
-        if (actual->dni == DNI)
+        if (actual->cliente.DNI == DNI)
         {
             nodoEncontrado = actual;
         }
