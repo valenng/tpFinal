@@ -33,7 +33,7 @@
 
 1698709802 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\autos.h
 
-1698712400 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\clientes.c
+1698714858 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -53,4 +53,11 @@
 
 1698712425 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\listas2clientes.h
 	"Clientes.h"
+
+1698713914 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\listas2clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"listas2Clientes.h"
 

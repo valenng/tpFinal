@@ -40,3 +40,25 @@ nodo2Clientes* buscarDNIlista2Cliente(nodo2Clientes* lista, int DNI)
     return nodoEncontrado;
 }
 
+nodo2Clientes* agregarNodo2EnLaLista2(nodo2Clientes* lista, nodo2Clientes* nuevoNodo)
+{
+
+    if(lista == NULL)
+    {
+
+        lista = nuevoNodo;
+
+    }
+    else
+    {
+
+        nuevoNodo->siguiente = lista;
+        lista->anterior = nuevoNodo;
+        lista = nuevoNodo;
+
+    }
+
+    return lista;
+
+
+}
