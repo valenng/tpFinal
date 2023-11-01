@@ -4,8 +4,11 @@
 #include <locale.h>
 
 #include "Autos.h" ///-> LIB. AUTOS C/PROTOTIPADOS Y ESTRUCTURA
+#include "Prots-LISTAS-autos.h"
 
-char *marcasDeAuto[10] = {"Toyota", "Fiat", "Citroën", "Audi", "Peugeot", "Volkswagen", "Ford", "Chevrolet", "Renault", "Nissan"} ;
+char archivoAutos[] = "ArchiAutos" ;
+
+char* marcasDeAuto[10] = {"Toyota", "Fiat", "Citroën", "Audi", "Peugeot", "Volkswagen", "Ford", "Chevrolet", "Renault", "Nissan"} ;
 
 /// 1- TOYOTA
 char* modelosToyota[10] = {"Etios Hatchback", "Etios Sedán", "Corolla", "Hilux", "SW4", "Etios Aibo", "GR86", "Camry", "RAV4", "C-HR"};
@@ -59,6 +62,20 @@ void mostrarCombustiblesOColores(char* combustiblesOColores[])
     }
 }
 
+///ASIGNACIÓN MATRÍCULA (ASÍ NO SE REPITE)
+char asignarMatricula()
+{
+    char primerLetra = 'A' ;
+    char segundaLetra = 'A' ;
+    int primerNumero = 0 ;
+    int segundoNumero = 0 ;
+
+    FILE* archivo = fopen(archivoAutos, "rb") ;
+    if(archivoAutos != NULL)
+    {
+
+    }
+}
 
 
 stAuto cargarUnAuto()
@@ -152,8 +169,34 @@ stAuto cargarUnAuto()
     printf("\n|INGRESAR LA CANTIDAD DE KM ACUMULADOS|: ") ;
     scanf("%f", &autito.kilometrosAcumulados) ;
 
+    do
+    {
+        printf("\|INGRESAR VALOR INICIAL DEL AUTO|: ") ;
+        scanf("%f", &autito.valorInicial) ;
+    }
+    while(autito.valorInicial < 0) ;
+
     autito.disponibilidad = 1 ; ///SIEMPRE SE INICIA ESTANDO DISPONIBLE PARA ALQUILAR
 
     return autito ;
+}
+
+nodo* cargarListaDeAutos(nodo* listaAutos)
+{
+    nodo* nuevoNodo = crearNodo(cargarUnAuto()) ;
+    listaAutos = agregarAlPrincipio(listaAutos, nuevoNodo) ;
+    return listaAutos ;
+}
+
+void cargarArchivoDeAutos()
+{
+    nodo* listaAutos;
+    FILE *archivo = fopen(archivoAutos, "ab") ;
+    if(archivo != NULL)
+    {
+        listaAutos = cargarListaDeAutos(listaAutos) ;
+        fwrite(listaAutos, sizeof(nodo*), 1, archivo) ; ///REVISAR POR EL &listaAutos
+        fclose(archivo) ;
+    }
 }
 

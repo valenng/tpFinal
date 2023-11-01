@@ -11,6 +11,7 @@ typedef struct
     int color;
     int capacidad;
     float kilometrosAcumulados;
+    float valorInicial ;
     int disponibilidad;  ///1- DISPONIBLE / 0- NO DISPONIBLE
 
 }stAuto ;

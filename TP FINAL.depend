@@ -61,3 +61,62 @@
 	<locale.h>
 	"listas2Clientes.h"
 
+1698790638 source:c:\users\verónica\desktop\valen\tp final c-git\tpfinal\autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Autos.h"
+
+1698803032 c:\users\verónica\desktop\valen\tp final c-git\tpfinal\autos.h
+
+1698790638 source:c:\users\verónica\desktop\valen\tp final c-git\tpfinal\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Clientes.h"
+	"listas2Clientes.h"
+
+1698790638 c:\users\verónica\desktop\valen\tp final c-git\tpfinal\clientes.h
+
+1698790638 c:\users\verónica\desktop\valen\tp final c-git\tpfinal\listas2clientes.h
+	"Clientes.h"
+
+1698790638 source:c:\users\verónica\desktop\valen\tp final c-git\tpfinal\listas2clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"listas2Clientes.h"
+
+1698790638 source:c:\users\verónica\desktop\valen\tp final c-git\tpfinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Autos.h"
+	"Clientes.h"
+	"menu.h"
+
+1698790638 c:\users\verónica\desktop\valen\tp final c-git\tpfinal\menu.h
+
+1698790638 source:c:\users\verónica\desktop\valen\tp final c-git\tpfinal\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Autos.h"
+	"Clientes.h"
+	"menu.h"
+
+1698802453 source:c:\users\verónica\desktop\valen\tp final c-git\tpfinal\func-listas-autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Prots-LISTAS-autos.h"
+
+1698802837 c:\users\verónica\desktop\valen\tp final c-git\tpfinal\prots-listas-autos.h
+	"Autos.h"
+
