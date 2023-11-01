@@ -70,14 +70,9 @@ void crearNuevoUsuario()
     nodo2Clientes * listaClientes = initLista2Cliente();
     FILE * archivo = fopen(NOMBRE_ARCHIVO, "ab");
 
-
-<<<<<<< HEAD
-
 if(archivo!=NULL){
-=======
     if(archivo!=NULL)
     {
->>>>>>> aad0f982f16ad157d2c45ce42446145a8c3c2604
 
         if(buscarDNIlista2Cliente(&listaClientes, nuevoCliente.DNI) == NULL)   ///
         {
@@ -89,14 +84,14 @@ if(archivo!=NULL){
             fclose(archivo);
             system("cls");
             printf("\n\n    usario creado con exito ");
-            sleep(3);
+            ///sleep(3);
         }
         else
         {
             system("cls");
-            sleep(3);
+            ///sleep(3);
             printf("EL DNI YA EXISTE. No se puede cargar a la nueva persona");
-            sleep(3);
+            ///sleep(3);
         }
 
         fclose(archivo);
@@ -105,17 +100,17 @@ if(archivo!=NULL){
     {
 
         printf("No se pudo abrir el archivo");
-        sleep(3);
+        ///sleep(3);
+
+
+
+        usuario();
+
+
     }
 
-
-
-    usuario();
-
-
 }
-
-
+}
 
 void usuarioSesionIniciada()
 {

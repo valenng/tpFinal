@@ -9,10 +9,11 @@
 
 int main()
 {
+    setlocale(LC_ALL, "") ;
     ///menu();
     stAuto autito ;
 
-
+    autito = cargarUnAuto() ;
 
     return 0;
 }

@@ -16,13 +16,8 @@ typedef struct
 
 }stAuto ;
 
-<<<<<<< HEAD
-void mostrarMarcasOModelos(char marcaOModelo[][15])
-void mostrarCombustiblesOColores(char*[]) ;
-=======
 void mostrarMarcasOModelos(char[][15]) ;
 void mostrarCombustiblesOColores(char[][15]) ;
->>>>>>> aad0f982f16ad157d2c45ce42446145a8c3c2604
 
 void asignarMatricula(char* []) ;
 stAuto cargarUnAuto() ;
