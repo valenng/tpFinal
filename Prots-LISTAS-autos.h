@@ -12,9 +12,15 @@ typedef struct
 nodo* inicLista() ;
 nodo* crearNodo(stAuto) ;
 nodo* agregarAlPrincipio(nodo*, nodo*) ;
+
+nodo* cargarListaDeAutos(nodo*) ;
+void cargarArchivoDeAutos(nodo*) ;
+
 nodo* agregarEnOrden(nodo*, nodo*) ;
 void escribir(nodo*) ;
 void recorrerYMostrar(nodo*) ;
 nodo* eliminarNodo(char[30], nodo*) ;
+
+
 
 #endif // PROTOTIPADOS_LISTAS_H_INCLUDED

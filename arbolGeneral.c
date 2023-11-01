@@ -2,10 +2,7 @@
 #include <string.h>
 #include <locale.h>
 
-#include "Autos.h"
-#include "Clientes.h"
-#include "menu.h"
-
+#include "arbolGeneral.h"
 
 nodoArbol * initNarbol()
 {
@@ -21,10 +18,9 @@ nodoArbol * crearNodoArbol(stAuto automovil)
 
     nodoArbol * nuevoNodoArbol = (nodoArbol *) malloc (sizeof(nodoArbol));
 
-    nodoArbol->automovil = automovil;
-    nodoArbol->izq = NULL;
-    nodoArbol->dere = NULL;
-
+    nuevoNodoArbol->automovil = automovil;
+    nuevoNodoArbol->izq = NULL;
+    nuevoNodoArbol->dere = NULL;
     return nuevoNodoArbol;
 
 }

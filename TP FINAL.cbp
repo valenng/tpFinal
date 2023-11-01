@@ -43,6 +43,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Prots-LISTAS-autos.h" />
+		<Unit filename="arbolGeneral.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="arbolGeneral.h" />
 		<Unit filename="listas2Clientes.c">
 			<Option compilerVar="CC" />
 		</Unit>
