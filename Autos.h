@@ -16,7 +16,7 @@ typedef struct
 
 }stAuto ;
 
-void mostrarMarcasOModelos(char *[]) ;
+void mostrarMarcasOModelos(char marcaOModelo[][15])
 void mostrarCombustiblesOColores(char*[]) ;
 
 stAuto cargarUnAuto() ;

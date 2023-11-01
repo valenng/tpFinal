@@ -69,6 +69,7 @@ nodo2Clientes * listaClientes = initLista2Cliente();
 FILE * archivo = fopen(NOMBRE_ARCHIVO, "ab");
 
 
+
 if(archivo!=NULL){
 
     if(buscarDNIlista2Cliente(&listaClientes, nuevoCliente.DNI) == NULL){  ///

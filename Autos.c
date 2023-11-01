@@ -8,35 +8,35 @@
 
 char archivoAutos[] = "ArchiAutos" ;
 
-char* marcasDeAuto[10] = {"Toyota", "Fiat", "Citroën", "Audi", "Peugeot", "Volkswagen", "Ford", "Chevrolet", "Renault", "Nissan"} ;
+char marcasDeAuto[10][15] = {"Toyota", "Fiat", "Citroën", "Audi", "Peugeot", "Volkswagen", "Ford", "Chevrolet", "Renault", "Nissan"} ;
 
 /// 1- TOYOTA
-char* modelosToyota[10] = {"Etios Hatchback", "Etios Sedán", "Corolla", "Hilux", "SW4", "Etios Aibo", "GR86", "Camry", "RAV4", "C-HR"};
+char modelosToyota[10][15] = {"Etios Hatchback", "Etios Sedán", "Corolla", "Hilux", "SW4", "Etios Aibo", "GR86", "Camry", "RAV4", "C-HR"};
 /// 2- FIAT
-char* modelosFiat[10] = {"Pulse", "Cronos", "Argo", "Toro", "Strada", "Mobi", "Uno", "500", "Tipo", "Fiorino"};
+char modelosFiat[10][15] = {"Pulse", "Cronos", "Argo", "Toro", "Strada", "Mobi", "Uno", "500", "Tipo", "Fiorino"};
 /// 3- CITROEN
-char* modelosCitroen[10] = {"C3", "C3 Aircross", "C4 X", "C4 Cactus", "C4 Lounge", "C5 Aircross", "Berlingo Furgón", "Berlingo Multispace", "Jumper", "Jumpy",};
+char modelosCitroen[10][15] = {"C3", "C3 Aircross", "C4 X", "C4 Cactus", "C4 Lounge", "C5 Aircross", "Berlingo Furgón", "Berlingo Multispace", "Jumper", "Jumpy",};
 /// 4- AUDI
-char* modelosAudi[10] = {"A4", "A3", "A6", "Q5", "A5", "A7", "Q3", "Q7", "A1", "Q8"};
+char modelosAudi[10][15] = {"A4", "A3", "A6", "Q5", "A5", "A7", "Q3", "Q7", "A1", "Q8"};
 /// 5- PEUGEOT
-char* modelosPeugeot[10] = {"208", "308", "408", "Partner Furgón", "Partner Patagónica", "Expert", "5008 SUV", "308S", "2008", "3008"};
+char modelosPeugeot[10][15] = {"208", "308", "408", "Partner Furgón", "Partner Patagónica", "Expert", "5008 SUV", "308S", "2008", "3008"};
 /// 6- VOLKSWAGEN
-char* modelosVolkswagen[10] = {"Amarok", "Gol", "Up!", "Saveiro", "T-Cross", "Golf", "Passat", "Suran", "Voyage", "Fox"};
+char modelosVolkswagen[10][15] = {"Amarok", "Gol", "Up!", "Saveiro", "T-Cross", "Golf", "Passat", "Suran", "Voyage", "Fox"};
 /// 7- FORD
-char* modelosFord[10] = {"Fiesta", "Ranger", "Ranger Raptor", "EcoSport", "Ka", "Focus", "Mustang", "Transit", "F-150 Raptor", "Territory"};
+char modelosFord[10][15] = {"Fiesta", "Ranger", "Ranger Raptor", "EcoSport", "Ka", "Focus", "Mustang", "Transit", "F-150 Raptor", "Territory"};
 /// 8- CHEVROLET
-char* modelosChevrolet[10] = {"Onix", "S10", "Joy", "Prisma Joy", "Cobalt", "Onix Joy", "Montana", "Trailblazer", "Spin", "Cruze"};
+char modelosChevrolet[10][15] = {"Onix", "S10", "Joy", "Prisma Joy", "Cobalt", "Onix Joy", "Montana", "Trailblazer", "Spin", "Cruze"};
 /// 9- RENAULT
-char* modelosRenault[10] = {"Sandero", "Logan", "Kangoo", "KWID", "Captur", "Duster", "Oroch", "Master", "Stepway", "Alaskan"};
+char modelosRenault[10][15] = {"Sandero", "Logan", "Kangoo", "KWID", "Captur", "Duster", "Oroch", "Master", "Stepway", "Alaskan"};
 /// 10- NISSAN
-char* modelosNissan[10] = {"Versa", "Sentra", "Frontier", "Kicks", "March", "Note", "Murano", "Leaf", "X-Trail", "Versa V-Drive"};
+char modelosNissan[10][15] = {"Versa", "Sentra", "Frontier", "Kicks", "March", "Note", "Murano", "Leaf", "X-Trail", "Versa V-Drive"};
 
-char* tipoCombustibles[5] = {"Infinia", "Súper", "Infinia Diesel", "Ultra Diesel", "Diesel 500"};
+char tipoCombustibles[5][15] = {"Infinia", "Súper", "Infinia Diesel", "Ultra Diesel", "Diesel 500"};
 
-char* coloresAutos[5] = {"Negro", "Blanco", "Rojo", "Gris", "Azul"} ;
+char coloresAutos[5][15] = {"Negro", "Blanco", "Rojo", "Gris", "Azul"} ;
 
 ///MOSTRAMOS TODAS LAS MARCAS O MODELOS
-void mostrarMarcasOModelos(char* marcaOModelo[])
+void mostrarMarcasOModelos(char marcaOModelo[][15])
 {
     for (int i = 1; i < 11; i++) ///--> SE PUEDE UTILIZAR PARA AMBOS PORQUE TIENEN LA MISMA CANTIDAD DE ELEMENTOS
     {
@@ -54,7 +54,7 @@ void mostrarModelos(char* modelos[])
 }
 */
 ///MOSTRAMOS TODOS LOS TIPOS DE COMBUSTIBLES O COLORES
-void mostrarCombustiblesOColores(char* combustiblesOColores[])
+void mostrarCombustiblesOColores(char combustiblesOColores[][15])
 {
     for(int i=1; i<6; i++)
     {

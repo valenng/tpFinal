@@ -2,9 +2,9 @@
 #include <string.h>
 #include <locale.h>
 
-#include "Autos.h"
 #include "Clientes.h"
 #include "menu.h"
+#include "arbolGeneral.h"
 
 
 nodoArbol * initNarbol()
@@ -21,9 +21,9 @@ nodoArbol * crearNodoArbol(stAuto automovil)
 
     nodoArbol * nuevoNodoArbol = (nodoArbol *) malloc (sizeof(nodoArbol));
 
-    nodoArbol->automovil = automovil;
-    nodoArbol->izq = NULL;
-    nodoArbol->dere = NULL;
+    nuevoNodoArbol->automovil = automovil;
+    nuevoNodoArbol->izq = NULL;
+    nuevoNodoArbol->dere = NULL;
 
     return nuevoNodoArbol;
 
@@ -63,6 +63,33 @@ nodoArbol * busquedaArbolGeneral(nodoArbol* arbol, char buscarMaticula)
     }
 
     return rta;
+
+}
+
+
+nodoArbol * insertarEnArbolGeneral(nodoArbol* arbolGeneral, stAuto automovil){
+
+if(arbolGeneral != NULL){
+
+    arbolGeneral = crearNodoArbol(automovil);
+
+}else{
+
+    if(automovil.matricula > arbolGeneral->automovil.matricula){
+
+        arbolGeneral->dere = insertarEnArbolGeneral(arbolGeneral->dere, automovil);
+
+    }else{
+
+        arbolGeneral->izq = insertarEnArbolGeneral(arbolGeneral->izq, automovil);
+
+
+    }
+
+}
+
+return arbolGeneral;
+
 
 }
 

@@ -10,6 +10,8 @@ typedef struct
     int licencia; // 1 si -  2 no
 
 
-} stClientes;
+}stClientes;
+
+
 
 #endif // CLIENTES_H_INCLUDED
