@@ -61,12 +61,13 @@
 	<locale.h>
 	"listas2Clientes.h"
 
-1698790638 source:c:\users\verónica\desktop\valen\tp final c-git\tpfinal\autos.c
+1698807542 source:c:\users\verónica\desktop\valen\tp final c-git\tpfinal\autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"Autos.h"
+	"Prots-LISTAS-autos.h"
 
 1698803032 c:\users\verónica\desktop\valen\tp final c-git\tpfinal\autos.h
 

@@ -63,21 +63,11 @@ void mostrarCombustiblesOColores(char* combustiblesOColores[])
 }
 
 ///ASIGNACIÓN MATRÍCULA (ASÍ NO SE REPITE)
-char asignarMatricula()
-{
-    char primerLetra = 'A' ;
-    char segundaLetra = 'A' ;
-    int primerNumero = 0 ;
-    int segundoNumero = 0 ;
-
-    FILE* archivo = fopen(archivoAutos, "rb") ;
-    if(archivoAutos != NULL)
-    {
-
-    }
-}
 
 
+
+
+///CARGAR UN AUTO
 stAuto cargarUnAuto()
 {
     stAuto autito;
@@ -171,7 +161,7 @@ stAuto cargarUnAuto()
 
     do
     {
-        printf("\|INGRESAR VALOR INICIAL DEL AUTO|: ") ;
+        printf("\n|INGRESAR VALOR INICIAL DEL AUTO|: ") ;
         scanf("%f", &autito.valorInicial) ;
     }
     while(autito.valorInicial < 0) ;
@@ -195,7 +185,7 @@ void cargarArchivoDeAutos()
     if(archivo != NULL)
     {
         listaAutos = cargarListaDeAutos(listaAutos) ;
-        fwrite(listaAutos, sizeof(nodo*), 1, archivo) ; ///REVISAR POR EL &listaAutos
+        fwrite(&listaAutos, sizeof(nodo*), 1, archivo) ; ///REVISAR POR EL &listaAutos
         fclose(archivo) ;
     }
 }
