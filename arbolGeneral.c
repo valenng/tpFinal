@@ -2,10 +2,14 @@
 #include <string.h>
 #include <locale.h>
 
+<<<<<<< HEAD
 #include "Clientes.h"
 #include "menu.h"
 #include "arbolGeneral.h"
 
+=======
+#include "arbolGeneral.h"
+>>>>>>> aad0f982f16ad157d2c45ce42446145a8c3c2604
 
 nodoArbol * initNarbol()
 {
@@ -24,7 +28,10 @@ nodoArbol * crearNodoArbol(stAuto automovil)
     nuevoNodoArbol->automovil = automovil;
     nuevoNodoArbol->izq = NULL;
     nuevoNodoArbol->dere = NULL;
+<<<<<<< HEAD
 
+=======
+>>>>>>> aad0f982f16ad157d2c45ce42446145a8c3c2604
     return nuevoNodoArbol;
 
 }

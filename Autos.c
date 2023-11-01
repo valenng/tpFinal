@@ -15,7 +15,11 @@ char modelosToyota[10][15] = {"Etios Hatchback", "Etios Sedán", "Corolla", "Hilu
 /// 2- FIAT
 char modelosFiat[10][15] = {"Pulse", "Cronos", "Argo", "Toro", "Strada", "Mobi", "Uno", "500", "Tipo", "Fiorino"};
 /// 3- CITROEN
+<<<<<<< HEAD
 char modelosCitroen[10][15] = {"C3", "C3 Aircross", "C4 X", "C4 Cactus", "C4 Lounge", "C5 Aircross", "Berlingo Furgón", "Berlingo Multispace", "Jumper", "Jumpy",};
+=======
+char modelosCitroen[10][15]= {"C3", "C3 Aircross", "C4 X", "C4 Cactus", "C4 Lounge", "C5 Aircross", "Berlingo Furgón", "Berlingo Multispace", "Jumper", "Jumpy",};
+>>>>>>> aad0f982f16ad157d2c45ce42446145a8c3c2604
 /// 4- AUDI
 char modelosAudi[10][15] = {"A4", "A3", "A6", "Q5", "A5", "A7", "Q3", "Q7", "A1", "Q8"};
 /// 5- PEUGEOT
@@ -63,10 +67,72 @@ void mostrarCombustiblesOColores(char combustiblesOColores[][15])
 }
 
 ///ASIGNACIÓN MATRÍCULA (ASÍ NO SE REPITE)
+/*
+void asignarMatricula(char* matricula[5])
+{
+    char primerLetra = 'A';
+    char segundaLetra = 'A' ;
+    int primerNumero = 0;
+    int segundoNumero = 0;
 
+    FILE* archivo = fopen(archivoAutos, "rb") ;
+    if(archivo != NULL)
+    {
+        fseek(archivo, 0, SEEK_END) ; ///PARA LLEGAR AL FINAL
+        long longitudArchivo = ftell(archivo);
 
+        if (longitudArchivo > 0)
+        {
+            stAuto matriculaAnterior ;
 
+            fseek(archivo, (-1)*sizeof(stAuto), SEEK_CUR) ; ///POSICIONARME AL PRINCIPIO DEL ÚLTIMO REGISTRO
 
+            fread(&matriculaAnterior, sizeof(stAuto), 1, archivo); ///LEO EL REGISTRO
+
+            fclose(archivo);
+
+            primerLetra = atoi(matricula[0]);
+            segundaLetra = atoi(matricula[1] );
+            primerNumero = atoi(matricula[2]) ;
+            segundoNumero = atoi(matricula[3]) ;
+
+            if(segundaLetra < 'Z')
+            {
+                segundaLetra++;
+            }
+            else
+            {
+                segundaLetra = 'A';
+                if(primerLetra < 'Z')
+                {
+                    segundaLetra++;
+                }
+                else
+                {
+                    segundaLetra = 'A' ;
+                    if(segundoNumero < 99)
+                    {
+                        segundoNumero++;
+                    }
+                    else
+                    {
+                        segundoNumero = 0;
+                        if(primerNumero < 99)
+                        {
+                            primerNumero++;
+                        }
+                        else
+                        {
+                            primerNumero = 0;
+                            segundoNumero = 0;
+                        }
+                    }
+                }
+            }
+
+    } ///FIN DE IF(ARCHIVO!=NULL)
+}
+*/
 ///CARGAR UN AUTO
 stAuto cargarUnAuto()
 {
@@ -178,14 +244,13 @@ nodo* cargarListaDeAutos(nodo* listaAutos)
     return listaAutos ;
 }
 
-void cargarArchivoDeAutos()
+void cargarArchivoDeAutos(nodo* listaAutos)
 {
-    nodo* listaAutos;
     FILE *archivo = fopen(archivoAutos, "ab") ;
     if(archivo != NULL)
     {
         listaAutos = cargarListaDeAutos(listaAutos) ;
-        fwrite(&listaAutos, sizeof(nodo*), 1, archivo) ; ///REVISAR POR EL &listaAutos
+        fwrite(listaAutos, sizeof(nodo*), 1, archivo) ; ///REVISAR POR EL &listaAutos
         fclose(archivo) ;
     }
 }

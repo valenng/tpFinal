@@ -1,67 +1,5 @@
 # depslib dependency file v1.0
-1698634943 source:c:\users\verónica\desktop\valen\tp final c-git\tp final\clientes.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<locale.h>
-	"Clientes.h"
-
-1698634943 c:\users\verónica\desktop\valen\tp final c-git\tp final\clientes.h
-
-1698636965 source:c:\users\verónica\desktop\valen\tp final c-git\tp final\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<locale.h>
-	"Autos.h"
-
-1698639778 source:c:\users\verónica\desktop\valen\tp final c-git\tp final\autos.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<locale.h>
-	"Autos.h"
-
-1698639794 c:\users\verónica\desktop\valen\tp final c-git\tp final\autos.h
-
-1698675129 source:e:\programacion\utn\1 aÑo\programacion y laboratorio 2\tpautofinal\tpfinal\autos.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<locale.h>
-	"Autos.h"
-
-1698709802 e:\programacion\utn\1 aÑo\programacion y laboratorio 2\tpautofinal\tpfinal\autos.h
-
-1698787597 source:e:\programacion\utn\1 aÑo\programacion y laboratorio 2\tpautofinal\tpfinal\clientes.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<locale.h>
-	"Clientes.h"
-	"listas2Clientes.h"
-
-1698709800 e:\programacion\utn\1 aÑo\programacion y laboratorio 2\tpautofinal\tpfinal\clientes.h
-
-1698784556 source:e:\programacion\utn\1 aÑo\programacion y laboratorio 2\tpautofinal\tpfinal\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<locale.h>
-	"Autos.h"
-	"Clientes.h"
-
-1698712425 e:\programacion\utn\1 aÑo\programacion y laboratorio 2\tpautofinal\tpfinal\listas2clientes.h
-	"Clientes.h"
-
-1698713914 source:e:\programacion\utn\1 aÑo\programacion y laboratorio 2\tpautofinal\tpfinal\listas2clientes.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<locale.h>
-	"listas2Clientes.h"
-
-1698807542 source:c:\users\verónica\desktop\valen\tp final c-git\tpfinal\autos.c
+1698842863 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -69,9 +7,12 @@
 	"Autos.h"
 	"Prots-LISTAS-autos.h"
 
-1698803032 c:\users\verónica\desktop\valen\tp final c-git\tpfinal\autos.h
+1698842863 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.h
 
-1698790638 source:c:\users\verónica\desktop\valen\tp final c-git\tpfinal\clientes.c
+1698841997 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\prots-listas-autos.h
+	"Autos.h"
+
+1698787839 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -79,19 +20,27 @@
 	"Clientes.h"
 	"listas2Clientes.h"
 
-1698790638 c:\users\verónica\desktop\valen\tp final c-git\tpfinal\clientes.h
+1698787839 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.h
 
-1698790638 c:\users\verónica\desktop\valen\tp final c-git\tpfinal\listas2clientes.h
+1698787839 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\listas2clientes.h
 	"Clientes.h"
 
-1698790638 source:c:\users\verónica\desktop\valen\tp final c-git\tpfinal\listas2clientes.c
+1698841261 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\func-listas-autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Prots-LISTAS-autos.h"
+	"Autos.h"
+
+1698787839 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\listas2clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"listas2Clientes.h"
 
-1698790638 source:c:\users\verónica\desktop\valen\tp final c-git\tpfinal\main.c
+1698841858 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -100,9 +49,9 @@
 	"Clientes.h"
 	"menu.h"
 
-1698790638 c:\users\verónica\desktop\valen\tp final c-git\tpfinal\menu.h
+1698788979 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.h
 
-1698790638 source:c:\users\verónica\desktop\valen\tp final c-git\tpfinal\menu.c
+1698788979 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -111,15 +60,16 @@
 	"Clientes.h"
 	"menu.h"
 
-1698802453 source:c:\users\verónica\desktop\valen\tp final c-git\tpfinal\func-listas-autos.c
-	<stdio.h>
+1698843134 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arbolgeneral.c
 	<stdlib.h>
 	<string.h>
 	<locale.h>
-	"Prots-LISTAS-autos.h"
+	"arbolGeneral.h"
 
-1698802837 c:\users\verónica\desktop\valen\tp final c-git\tpfinal\prots-listas-autos.h
+1698843106 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arbolgeneral.h
 	"Autos.h"
+	"Clientes.h"
+	"menu.h"
 
 1698837899 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\autos.c
 	<stdio.h>

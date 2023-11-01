@@ -9,6 +9,10 @@
 
 int main()
 {
-    menu();
+    ///menu();
+    stAuto autito ;
+
+
+
     return 0;
 }

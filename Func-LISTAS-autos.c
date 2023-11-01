@@ -2,7 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+
 #include "Prots-LISTAS-autos.h"
+#include "Autos.h"
 
 ///1) INCILISTA
 ///2) CREAR NODO
