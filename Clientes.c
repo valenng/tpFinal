@@ -67,14 +67,19 @@ void crearNuevoUsuario()
 ///---------
 /// verificar estado de DNI y carga la lista en el arhivo
 
-    if(buscarDNIlista2Cliente(&listaClientes, nuevoCliente.DNI) == NULL){
+    nodo2Clientes* listaClientes = clientesArchivoCargarLista(); // se carga en la la lista los clientes. se pasan los clientes del archivo a la lista
 
-        cargarClienteEnLista(nuevoCliente);
+    if(buscarDNIlista2Cliente(&listaClientes, nuevoCliente.DNI) == NULL)
+    {
 
-    }else{
+        cargarClienteEnLista(nuevoCliente); /// carga del nuevo cliente en la lista y luevo en el archivo;
 
-    printf("El dni ya existe ");
-    menu();
+    }
+    else // si el DNI ya existe NO se carga el nuevo cliente;
+    {
+
+        printf("El dni ya existe ");
+        menu();
 
 
     }
@@ -85,79 +90,28 @@ void crearNuevoUsuario()
 }
 
 
-void cargarClienteEnLista(stClientes nuevoCliente){
+void cargarClienteEnLista(stClientes nuevoCliente)
+{
 
 
 
-        nodo2Clientes * listaCliente = cargarListaClientesArchivo(); /// crear funcion que devuelva una lista cargada segun un archivo
+    nodo2Clientes * listaCliente = clientesArchivoCargarLista(); /// teniendo en cuenta los datos del archivo. se cargan estos datos el la lista. (se crea una nueva lista con los clientes)
 
 
-        nodo2Clientes * nodoNuevo = crearNodo2Cliente(nuevoCliente);
-        nodo2Clientes * lista = agregarAlPrincipio(listaCliente,nodoNuevo);
+    nodo2Clientes * nodoNuevo = crearNodo2Cliente(nuevoCliente); /// se crea un nuevo nodo cliente para agregar en la lista 2
+    nodo2Clientes * lista = agregarNodo2EnLaLista2(listaCliente,nodoNuevo); /// se agrega al cliente en la lista 2
 
-        cargarListaDeClientes2EnArchivo(lista);
-
-
-}
-
-
-nodo2Clientes* cargarListaClientesArchivo(){
-
-nodo2Clientes* lista2 = initLista2Cliente;
-nodo2Clientes* nodoCliente;
-FILE* archivo = fopen(CLIENTE_ARCHIVO, "rb");
-stClientes cliente;
-
-if(archivo != NULL){
-
-    while(fwrite(&cliente, sizeof(stClientes), 1, archivo)>0){
-
-        nodoCliente = crearNodo2Cliente(cliente);
-        lista2 = agregarNodo2EnLaLista2(lista2, nodoCliente);
-
-
-    }
-    fclose(archivo);
-
-
-}else{
-
-printf("no se pudo abrir el archivo");
-
-}
-
-
-return lista2;
-
-
+    cargarListaDeClientes2EnArchivo(lista);
 
 
 }
 
 
 
-nodo2Clientes* cargarListaDeClientes2EnArchivo(nodo2Clientes lista){ /// terminar en casa
-
-FILE* archivo = fopen(CLIENTE_ARCHIVO, "rb");
-stClientes cliente;
-
-if(archivo != NULL){
 
 
 
 
-
-    }
-    fclose(archivo);
-
-
-}else{
-
-printf("no se pudo abrir el archivo");
-
-}
-
-}
 
 
 

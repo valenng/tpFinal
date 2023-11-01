@@ -62,12 +62,13 @@ void usuario()
         printf("   Ingresar sesion:   \n\nIngresar su DNI:  ");
         scanf("%i", &dni);
 
-        verificar = verificarUsuario(dni);
+        /// verificar usuario
+        // verificar = verificarUsuario(dni);
 
         if(verificar != 0)
         {
 
-            usuarioSesionIniciada();
+            //usuarioSesionIniciada();
 
         }
         else

@@ -147,3 +147,75 @@
 	"Clientes.h"
 	"menu.h"
 
+1698878157 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\arbolgeneral.c
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Clientes.h"
+	"menu.h"
+	"arbolGeneral.h"
+
+1698879486 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\clientes.h
+
+1698878157 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\menu.h
+
+1698878157 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\arbolgeneral.h
+	"Autos.h"
+	"Clientes.h"
+	"menu.h"
+
+1698878157 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\autos.h
+
+1698878157 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Autos.h"
+	"Prots-LISTAS-autos.h"
+
+1698878157 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\prots-listas-autos.h
+	"Autos.h"
+
+1698879486 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Clientes.h"
+	"listas2Clientes.h"
+
+1698878157 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\listas2clientes.h
+	"Clientes.h"
+
+1698878157 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\func-listas-autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Prots-LISTAS-autos.h"
+	"Autos.h"
+
+1698879486 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\listas2clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"listas2Clientes.h"
+
+1698878812 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"menu.h"
+
+1698878869 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Autos.h"
+	"Clientes.h"
+	"menu.h"
+

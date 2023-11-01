@@ -12,6 +12,9 @@ typedef struct
 
 }stClientes;
 
+void cargarClienteEnLista(stClientes nuevoCliente);
+void crearNuevoUsuario();
+
 
 
 #endif // CLIENTES_H_INCLUDED
