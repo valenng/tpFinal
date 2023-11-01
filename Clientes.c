@@ -3,14 +3,14 @@
 #include <string.h>
 #include <locale.h>
 
-#define NOMBRE_ARCHIVO "archivoClientes.bin" // const nombre del archivo
+#define CLIENTE_ARCHIVO "archivoClientes.bin" // const nombre del archivo
 
 #include "Clientes.h" ///-> LIB. CLIENTES C/PROTOTIPADOS Y ESTRUCTURA
 #include "listas2Clientes.h"
 
 
-
-int verificarUsuario(int DNI){   /// consultar
+/*
+int verificarUsuario(int DNI){   /// hacer en casa
 
     FILE *archivo = fopen(NOMBRE_ARCHIVO, "rb");
     int salida = 0;
@@ -43,7 +43,7 @@ int verificarUsuario(int DNI){   /// consultar
 
 }
 
-
+*/
 
 void crearNuevoUsuario()
 {
@@ -67,57 +67,97 @@ void crearNuevoUsuario()
 ///---------
 /// verificar estado de DNI y carga la lista en el arhivo
 
-    nodo2Clientes * listaClientes = initLista2Cliente();
-    FILE * archivo = fopen(NOMBRE_ARCHIVO, "ab");
+    if(buscarDNIlista2Cliente(&listaClientes, nuevoCliente.DNI) == NULL){
 
-if(archivo!=NULL){
-    if(archivo!=NULL)
-    {
+        cargarClienteEnLista(nuevoCliente);
 
-        if(buscarDNIlista2Cliente(&listaClientes, nuevoCliente.DNI) == NULL)   ///
-        {
+    }else{
 
-            nodo2Clientes* nuevo2NodoCliete = crearNodo2Cliente(nuevoCliente);
-            listaClientes = agregarNodo2EnLaLista2(listaClientes, nuevo2NodoCliete);
-            fseek(archivo, 0, SEEK_CUR);
-            fwrite(listaClientes, -sizeof(nodo2Clientes), 1, archivo);
-            fclose(archivo);
-            system("cls");
-            printf("\n\n    usario creado con exito ");
-            ///sleep(3);
-        }
-        else
-        {
-            system("cls");
-            ///sleep(3);
-            printf("EL DNI YA EXISTE. No se puede cargar a la nueva persona");
-            ///sleep(3);
-        }
-
-        fclose(archivo);
-    }
-    else
-    {
-
-        printf("No se pudo abrir el archivo");
-        ///sleep(3);
-
-
-
-        usuario();
+    printf("El dni ya existe ");
+    menu();
 
 
     }
 
-}
-}
 
-void usuarioSesionIniciada()
-{
+
 
 }
 
 
+void cargarClienteEnLista(stClientes nuevoCliente){
+
+
+
+        nodo2Clientes * listaCliente = cargarListaClientesArchivo(); /// crear funcion que devuelva una lista cargada segun un archivo
+
+
+        nodo2Clientes * nodoNuevo = crearNodo2Cliente(nuevoCliente);
+        nodo2Clientes * lista = agregarAlPrincipio(listaCliente,nodoNuevo);
+
+        cargarListaDeClientes2EnArchivo(lista);
+
+
+}
+
+
+nodo2Clientes* cargarListaClientesArchivo(){
+
+nodo2Clientes* lista2 = initLista2Cliente;
+nodo2Clientes* nodoCliente;
+FILE* archivo = fopen(CLIENTE_ARCHIVO, "rb");
+stClientes cliente;
+
+if(archivo != NULL){
+
+    while(fwrite(&cliente, sizeof(stClientes), 1, archivo)>0){
+
+        nodoCliente = crearNodo2Cliente(cliente);
+        lista2 = agregarNodo2EnLaLista2(lista2, nodoCliente);
+
+
+    }
+    fclose(archivo);
+
+
+}else{
+
+printf("no se pudo abrir el archivo");
+
+}
+
+
+return lista2;
+
+
+
+
+}
+
+
+
+nodo2Clientes* cargarListaDeClientes2EnArchivo(nodo2Clientes lista){ /// terminar en casa
+
+FILE* archivo = fopen(CLIENTE_ARCHIVO, "rb");
+stClientes cliente;
+
+if(archivo != NULL){
+
+
+
+
+
+    }
+    fclose(archivo);
+
+
+}else{
+
+printf("no se pudo abrir el archivo");
+
+}
+
+}
 
 
 

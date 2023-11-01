@@ -73,7 +73,7 @@
 	"Clientes.h"
 	"menu.h"
 
-1698837899 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\autos.c
+1698845429 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -81,12 +81,12 @@
 	"Autos.h"
 	"Prots-LISTAS-autos.h"
 
-1698843283 c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\autos.h
+1698845429 c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\autos.h
 
-1698837899 c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\prots-listas-autos.h
+1698845429 c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\prots-listas-autos.h
 	"Autos.h"
 
-1698843283 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\clientes.c
+1698845429 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -94,26 +94,27 @@
 	"Clientes.h"
 	"listas2Clientes.h"
 
-1698843484 c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\clientes.h
+1698845429 c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\clientes.h
 
-1698789497 c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\listas2clientes.h
+1698845429 c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\listas2clientes.h
 	"Clientes.h"
 
-1698837899 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\func-listas-autos.c
+1698845429 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\func-listas-autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"Prots-LISTAS-autos.h"
+	"Autos.h"
 
-1698789497 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\listas2clientes.c
+1698845429 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\listas2clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"listas2Clientes.h"
 
-1698789497 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\main.c
+1698848010 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -122,9 +123,9 @@
 	"Clientes.h"
 	"menu.h"
 
-1698789497 c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\menu.h
+1698845429 c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\menu.h
 
-1698789497 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\menu.c
+1698845429 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -133,15 +134,16 @@
 	"Clientes.h"
 	"menu.h"
 
-1698841693 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\arbolgeneral.c
+1698849247 source:c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\arbolgeneral.c
 	<stdlib.h>
 	<string.h>
 	<locale.h>
-	"Autos.h"
 	"Clientes.h"
 	"menu.h"
 	"arbolGeneral.h"
 
-1698843108 c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\arbolgeneral.h
+1698845429 c:\users\antub\documents\programacion\utn\laboratorio y programacion 2\tpfinal\tpfinal\arbolgeneral.h
 	"Autos.h"
+	"Clientes.h"
+	"menu.h"
 

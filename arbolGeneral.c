@@ -89,3 +89,16 @@ return arbolGeneral;
 
 }
 
+
+void mostrarArbolPreorden(nodoArbol* arbol)
+{
+    if(arbol != NULL){
+
+        printf("%d", arbol->automovil);
+        mostrarArbolPreorden(arbol->izq);
+        mostrarArbolPreorden(arbol->izq);
+
+    }
+
+}
+
