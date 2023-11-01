@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1698843936 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.c
+1698845298 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -7,7 +7,7 @@
 	"Autos.h"
 	"Prots-LISTAS-autos.h"
 
-1698843874 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.h
+1698845255 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.h
 
 1698841997 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\prots-listas-autos.h
 	"Autos.h"
@@ -40,7 +40,7 @@
 	<locale.h>
 	"listas2Clientes.h"
 
-1698841858 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\main.c
+1698844258 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
