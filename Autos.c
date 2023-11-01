@@ -63,9 +63,16 @@ void mostrarCombustiblesOColores(char combustiblesOColores[][20])
 }
 
 ///ASIGNACIÓN MATRÍCULA (ASÍ NO SE REPITE)
-/*
+
 void asignarMatricula(char* matricula[5])
 {
+    srand(time(NULL)) ;
+    matricula[0] = rand()%35+64 ;
+    matricula[1] = rand()%35+64 ;
+    matricula[2] = rand()%10+47 ;
+    matricula[3] = rand()%10+47 ;
+    matricula[4] = '/0' ;
+    /*
     char primerLetra = 'A';
     char segundaLetra = 'A' ;
     int primerNumero = 0;
@@ -127,8 +134,9 @@ void asignarMatricula(char* matricula[5])
             }
 
     } ///FIN DE IF(ARCHIVO!=NULL)
+    */
 }
-*/
+
 ///CARGAR UN AUTO
 stAuto cargarUnAuto()
 {
