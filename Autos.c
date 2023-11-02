@@ -259,22 +259,3 @@ void cargarArchivoDeAutos(nodo* listaAutos)
     }
 }
 
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-
-nodo* cargarListaDeAutos(nodo* listaAutos)
-{
-    stAuto autito;
-    FILE *archivo = fopen(archivoAutos, "rb") ;
-    if(archivo != NULL)
-    {
-        while(fread(&autito, sizeof(stAuto), 1, archivo) > 0)
-        {
-            nodo* nuevoNodo = crearNodo(autito) ;
-            listaAutos = agregarAlPrincipio(listaAutos, nuevoNodo) ;
-        }
-        fclose(archivo) ;
-    }
-    return listaAutos ; ///HOLA
-}
-
