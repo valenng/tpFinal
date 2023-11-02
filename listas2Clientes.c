@@ -35,7 +35,7 @@ nodo2Clientes* buscarDNIlista2Cliente(nodo2Clientes* lista, int DNI) /// funcion
         if (actual->cliente.DNI == DNI)
         {
             nodoEncontrado = actual;
-            break; /// detener la busqueda del dni
+
         }
         actual = actual->siguiente;
     }
@@ -71,7 +71,7 @@ nodo2Clientes* agregarNodo2EnLaLista2(nodo2Clientes* lista, nodo2Clientes* nuevo
 nodo2Clientes * clientesArchivoCargarLista()
 {
 
-    nodo2Clientes* lista2 = initLista2Cliente;
+    nodo2Clientes* lista2 = initLista2Cliente();
     nodo2Clientes* nodoCliente;
     FILE* archivo = fopen(CLIENTE_ARCHIVO, "rb");
     stClientes cliente;
@@ -89,7 +89,6 @@ nodo2Clientes * clientesArchivoCargarLista()
         }
         fclose(archivo);
 
-
     }
     else
     {
@@ -104,7 +103,7 @@ nodo2Clientes * clientesArchivoCargarLista()
 }
 
 
-nodo2Clientes* cargarListaDeClientes2EnArchivo(nodo2Clientes* lista)
+void cargarListaDeClientes2EnArchivo(nodo2Clientes* lista)
 {
 
     FILE* archivo = fopen(CLIENTE_ARCHIVO, "wb");
@@ -133,6 +132,20 @@ nodo2Clientes* cargarListaDeClientes2EnArchivo(nodo2Clientes* lista)
         printf("no se pudo abrir el archivo");
 
     }
+}
+
+
+void mostrarlistaClientesLista2(nodo2Clientes* listaClientes){
+
+nodo2Clientes * listaActual = listaClientes;
+
+    while(listaActual!=NULL){
+
+        mostrarCliente(listaActual->cliente);
+        listaActual = listaActual->siguiente;
+
+    }
+
 }
 
 

@@ -14,6 +14,7 @@ typedef struct
 
 void cargarClienteEnLista(stClientes nuevoCliente);
 void crearNuevoUsuario();
+stClientes buscarStClientePorDNI(int DNI);
 
 
 

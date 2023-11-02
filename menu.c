@@ -33,7 +33,9 @@ void menu ()
         break;
     case 2:
 
-        administracion();
+        //administracion();
+
+
         break;
 
     default:
@@ -56,6 +58,10 @@ void usuario()
     {
 
     case 1:
+
+
+
+
         system("cls");
 
         int dni;
@@ -64,6 +70,7 @@ void usuario()
 
         /// verificar usuario
         verificar = verificarUsuario(dni);
+        printf(" ACA ESTAMOS ");
 
         if(verificar != 0)
         {
@@ -71,7 +78,7 @@ void usuario()
             system("cls");
             printf("        inicio de sesion");
             sleep(3);
-            usuarioSesionIniciada();
+            usuarioSesionIniciada(dni);
 
         }
         else
@@ -112,7 +119,7 @@ void usuario()
 }
 
 
-void usuarioSesionIniciada(){
+void usuarioSesionIniciada(int DNI){
 
 
   int opcion;
@@ -148,10 +155,20 @@ void usuarioSesionIniciada(){
                 /// falta funcion
                 break;
             case 6:
+                printf("\n\n        Información personal");
+                mostrarInformacionDelCliente(DNI);
+                esperarTecla();
+                usuarioSesionIniciada(DNI);
+
+
+                /// falta funcion
+
+            case 7:
 
                 system("cls");
                 printf("\n\n        Sesion cerrada. ¡Hasta luego!");
                 sleep(3);
+                menu();
                 /// falta funcion
                 break;
             default:
@@ -169,5 +186,12 @@ void administracion()
 
     system("cls");
 
+}
+
+
+
+void esperarTecla() {
+    printf("Presiona una tecla para continuar...");
+    getchar();
 }
 
