@@ -7,9 +7,9 @@
 	"Autos.h"
 	"Prots-LISTAS-autos.h"
 
-1698845255 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.h
+1698956021 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.h
 
-1698841997 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\prots-listas-autos.h
+1698956021 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\prots-listas-autos.h
 	"Autos.h"
 
 1698844159 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.c
@@ -20,7 +20,7 @@
 	"Clientes.h"
 	"listas2Clientes.h"
 
-1698843758 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.h
+1698935399 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.h
 
 1698787839 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\listas2clientes.h
 	"Clientes.h"
@@ -33,20 +33,18 @@
 	"Prots-LISTAS-autos.h"
 	"Autos.h"
 
-1698787839 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\listas2clientes.c
+1698935399 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\listas2clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"listas2Clientes.h"
 
-1698844258 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\main.c
+1698936900 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
-	"Autos.h"
-	"Clientes.h"
 	"menu.h"
 
 1698788979 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.h
