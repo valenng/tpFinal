@@ -185,6 +185,12 @@ void usuarioSesionIniciada(int DNI){
 void administracion()
 {
 
+      system("cls");
+      printf("Menu de Alquiler de Autos:\n\n\n1)    Menu autos\n2)  Menu clientes\n3)   Menu alquileres");
+
+      printf("\n\n");
+
+
     system("cls");
 
 }

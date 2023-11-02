@@ -18,7 +18,6 @@ int verificarUsuario(int DNI)
     nodo2Clientes *  listaClientes = initLista2Cliente();
     listaClientes = clientesArchivoCargarLista();
 
-
     if(buscarDNIlista2Cliente(listaClientes, DNI) != NULL)
     {
 

@@ -289,3 +289,75 @@
 	"Clientes.h"
 	"menu.h"
 
+1698958164 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Clientes.h"
+	"listas2Clientes.h"
+
+1698927048 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\clientes.h
+
+1698924824 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\listas2clientes.h
+	"Clientes.h"
+
+1698958203 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\func-listas-autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Prots-LISTAS-autos.h"
+	"Autos.h"
+
+1698924824 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\prots-listas-autos.h
+	"Autos.h"
+
+1698924824 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\autos.h
+
+1698932330 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\listas2clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"listas2Clientes.h"
+
+1698924824 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"menu.h"
+
+1698924824 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\menu.h
+
+1698959486 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Autos.h"
+	"Clientes.h"
+	"menu.h"
+
+1698924824 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\arbolgeneral.c
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Clientes.h"
+	"menu.h"
+	"arbolGeneral.h"
+
+1698924824 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\arbolgeneral.h
+	"Autos.h"
+	"Clientes.h"
+	"menu.h"
+
+1698958187 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\autos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Autos.h"
+	"Prots-LISTAS-autos.h"
+

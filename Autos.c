@@ -241,6 +241,7 @@ stAuto cargarUnAuto()
     return autito ;
 }
 
+
 nodo* cargarListaDeAutos(nodo* listaAutos)
 {
     nodo* nuevoNodo = crearNodo(cargarUnAuto()) ;
