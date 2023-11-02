@@ -35,6 +35,7 @@ nodo2Clientes* buscarDNIlista2Cliente(nodo2Clientes* lista, int DNI) /// funcion
         if (actual->cliente.DNI == DNI)
         {
             nodoEncontrado = actual;
+            break; /// detener la busqueda del dni
         }
         actual = actual->siguiente;
     }

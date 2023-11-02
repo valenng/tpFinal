@@ -63,21 +63,24 @@ void usuario()
         scanf("%i", &dni);
 
         /// verificar usuario
-        // verificar = verificarUsuario(dni);
+        verificar = verificarUsuario(dni);
 
         if(verificar != 0)
         {
 
-            //usuarioSesionIniciada();
+            system("cls");
+            printf("        inicio de sesion");
+            sleep(3);
+            usuarioSesionIniciada();
 
         }
         else
         {
 
-            ///sleep(3);
+            sleep(3);
             system("cls");
             printf("el usuario no existe");
-            ///sleep(3);
+            sleep(3);
 
             usuario();
 
@@ -107,6 +110,58 @@ void usuario()
     }
 
 }
+
+
+void usuarioSesionIniciada(){
+
+
+  int opcion;
+
+    do {
+        system("cls");
+
+        printf("Menu de Alquiler de Autos:\n");
+        printf("1) Ver catalogo de autos disponibles\n");
+        printf("2) ver los autos mas populares\n ");
+        printf("3) Alquilar un auto\n");
+        printf("4) Devolver un auto alquilado\n");
+        printf("5) Ver historial de alquileres\n");
+        printf("6) Información personal\n");
+        printf("7) Cerrar sesion\n");
+        printf("Ingrese la opción deseada: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                /// falta funcion
+                break;
+            case 2:
+                /// falta funcion
+                break;
+            case 3:
+                /// falta funcion
+                break;
+            case 4:
+                /// falta funcion
+                break;
+            case 5:
+                /// falta funcion
+                break;
+            case 6:
+
+                system("cls");
+                printf("\n\n        Sesion cerrada. ¡Hasta luego!");
+                sleep(3);
+                /// falta funcion
+                break;
+            default:
+                break;
+        }
+
+    } while (opcion != 7);
+}
+
+
 
 
 void administracion()

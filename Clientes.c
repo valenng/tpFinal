@@ -9,41 +9,27 @@
 #include "listas2Clientes.h"
 
 
-/*
-int verificarUsuario(int DNI){   /// hacer en casa
 
-    FILE *archivo = fopen(NOMBRE_ARCHIVO, "rb");
+int verificarUsuario(int DNI)
+{
+
+
     int salida = 0;
     nodo2Clientes *  listaClientes = initLista2Cliente();
+    listaClientes = clientesArchivoCargarLista();
 
 
-
-    if(archivo != NULL)
+    if(buscarDNIlista2Cliente(listaClientes, DNI) != NULL)
     {
 
-        if(buscarDNIlista2Cliente(&listaClientes, DNI) != NULL)  /// FALLTA CREAR LA LISTA DE CLIENTES
-        {
-
-            salida = 1;
-
-        }
-        else
-        {
-
-            printf("no se pudo abrir el archivo");
-
-        }
-
+        salida = 1;
 
     }
-
-    fclose(archivo);
 
     return salida;
 
 }
 
-*/
 
 void crearNuevoUsuario()
 {
@@ -105,6 +91,7 @@ void cargarClienteEnLista(stClientes nuevoCliente)
 
 
 }
+
 
 
 

@@ -177,7 +177,7 @@
 1698878157 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\prots-listas-autos.h
 	"Autos.h"
 
-1698879486 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\clientes.c
+1698884261 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -196,7 +196,7 @@
 	"Prots-LISTAS-autos.h"
 	"Autos.h"
 
-1698879486 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\listas2clientes.c
+1698884261 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\listas2clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -210,7 +210,7 @@
 	<locale.h>
 	"menu.h"
 
-1698878869 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\menu.c
+1698884617 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
