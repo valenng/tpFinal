@@ -16,9 +16,7 @@ int verificarUsuario(int DNI)
 
     int salida = 0;
     nodo2Clientes *  listaClientes = initLista2Cliente();
-    //listaClientes = clientesArchivoCargarLista();
-
-    printf("CARGA DEL LA LISTA AL ARIVO completada");
+    listaClientes = clientesArchivoCargarLista();
 
 
     if(buscarDNIlista2Cliente(listaClientes, DNI) != NULL)
@@ -64,12 +62,16 @@ void crearNuevoUsuario()
 
         cargarClienteEnLista(nuevoCliente); /// carga del nuevo cliente en la lista y luevo en el archivo;
 
+         printf("USUARIO CREADO CON EXITO !!!");
+        sleep(5);
+        menu();
 
     }
     else // si el DNI ya existe NO se carga el nuevo cliente;
     {
 
         printf("El dni ya existe ");
+        sleep(5);
         menu();
 
 

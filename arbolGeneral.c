@@ -6,48 +6,27 @@
 #include "menu.h"
 #include "arbolGeneral.h"
 
-nodoArbol* inicArbol()
+nodoArbol * initNarbol()
 {
+
     return NULL;
+
 }
 
-nodoArbol* crearNodoArbol(stAuto autoNuevo)
+
+nodoArbol * crearNodoArbol(stAuto automovil)
 {
-    nodoArbol* nuevoNodoArbol = (nodoArbol*) malloc (sizeof(nodoArbol));
-    nuevoNodoArbol->autito = autoNuevo;
-    nuevoNodoArbol->izquierda = NULL;
-    nuevoNodoArbol->derecha = NULL;
+    nodoArbol * nuevoNodoArbol = (nodoArbol *) malloc (sizeof(nodoArbol));
+
+    nuevoNodoArbol->automovil = automovil;
+    nuevoNodoArbol->izq = NULL;
+    nuevoNodoArbol->dere = NULL;
 
     return nuevoNodoArbol;
 }
 
-nodoArbol* insertarEnArbol(nodoArbol* arbolAutos, stAuto autito)
-{
-    if(arbolAutos == NULL)
-    {
-        arbolAutos = crearNodoArbol(autito) ;
-    }
-    else
-    {
-        if(autito.marcasDeAuto > arbolAutos->autito.marcasDeAuto)
-        {
-            arbolAutos->derecha = insertarEnArbol(arbolAutos->derecha, autito.marcasDeAuto) ;
-        }
-        else
-        {
-            arbolAutos->izquierda = insertarEnArbol(arbolAutos->izquierda, autito.marcasDeAuto) ;
-        }
-    }
-    return arbolAutos ;
-}
 
-
-
-
-
-
-/*
-nodoArbol* busquedaArbolGeneral(nodoArbol* arbol, char buscarMaticula)
+nodoArbol * busquedaArbolGeneral(nodoArbol* arbol, char buscarMaticula)
 {
 
     nodoArbol* rta = NULL;
@@ -123,4 +102,3 @@ void mostrarArbolPreorden(nodoArbol* arbol)
 
 }
 
-*/

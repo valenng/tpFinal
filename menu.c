@@ -33,7 +33,7 @@ void menu ()
         break;
     case 2:
 
-        //administracion();
+        administracion();
 
 
         break;
@@ -70,24 +70,23 @@ void usuario()
 
         /// verificar usuario
         verificar = verificarUsuario(dni);
-        printf(" ACA ESTAMOS ");
 
         if(verificar != 0)
         {
 
             system("cls");
-            printf("        inicio de sesion");
-            ///sleep(3);
+            printf("\n\n        Inicio de sesion");
+            sleep(3);
             usuarioSesionIniciada(dni);
 
         }
         else
         {
 
-            ///sleep(3);
+            sleep(3);
             system("cls");
             printf("el usuario no existe");
-            ///sleep(3);
+            sleep(3);
 
             usuario();
 
@@ -110,7 +109,7 @@ void usuario()
 
     default:
 
-        menu();
+
 
         break;
 
@@ -127,9 +126,9 @@ void usuarioSesionIniciada(int DNI){
     do {
         system("cls");
 
-        printf("Menu de Alquiler de Autos:\n");
+        printf("Menu de Alquiler de Autos:\n\n");
         printf("1) Ver catalogo de autos disponibles\n");
-        printf("2) ver los autos mas populares\n ");
+        printf("2) ver los autos mas populares\n");
         printf("3) Alquilar un auto\n");
         printf("4) Devolver un auto alquilado\n");
         printf("5) Ver historial de alquileres\n");
@@ -155,8 +154,10 @@ void usuarioSesionIniciada(int DNI){
                 /// falta funcion
                 break;
             case 6:
+                system("cls");
                 printf("\n\n        Información personal");
                 mostrarInformacionDelCliente(DNI);
+                fflush(stdin);
                 esperarTecla();
                 usuarioSesionIniciada(DNI);
 
@@ -167,7 +168,7 @@ void usuarioSesionIniciada(int DNI){
 
                 system("cls");
                 printf("\n\n        Sesion cerrada. ¡Hasta luego!");
-                ///sleep(3);
+                sleep(3);
                 menu();
                 /// falta funcion
                 break;
@@ -191,7 +192,7 @@ void administracion()
 
 
 void esperarTecla() {
-    printf("Presiona una tecla para continuar...");
+    printf("\n\nPresiona una tecla para continuar...");
     getchar();
 }
 

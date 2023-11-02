@@ -7,12 +7,10 @@
 
 typedef struct
 {
-    stAuto autito;
-    struct nodoArbol* izquierda;
-    struct nodoArbol* derecha;
+    stAuto automovil;
+    struct nodoArbol * izq;
+    struct nodoArbol * dere;
 } nodoArbol;
 
-nodoArbol* inicArbol() ;
-nodoArbol* insertarEnArbol(nodoArbol* arbolAutos, stAuto);
 
 #endif // ARBOLGENERAL_H_INCLUDED

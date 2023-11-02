@@ -14,6 +14,7 @@ nodo* crearNodo(stAuto) ;
 nodo* agregarAlPrincipio(nodo*, nodo*) ;
 
 nodo* cargarListaDeAutos(nodo*) ;
+void cargarArchivoDeAutos(nodo*) ;
 
 nodo* agregarEnOrden(nodo*, nodo*) ;
 void escribir(nodo*) ;

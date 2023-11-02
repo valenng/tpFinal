@@ -33,7 +33,7 @@ char modelosNissan[10][20] = {"Versa", "Sentra", "Frontier", "Kicks", "March", "
 
 char tipoCombustibles[5][20] = {"Infinia", "Súper", "Infinia Diesel", "Ultra Diesel", "Diesel 500"};
 
-char coloresAutos[5][20] = {"Negro", "Blanco", "Rojo", "Gris", "Azul"} ;
+char coloresAutos[5][15] = {"Negro", "Blanco", "Rojo", "Gris", "Azul"} ;
 
 ///MOSTRAMOS TODAS LAS MARCAS O MODELOS
 void mostrarMarcasOModelos(char marcaOModelo[][20])
@@ -43,10 +43,6 @@ void mostrarMarcasOModelos(char marcaOModelo[][20])
         printf("\n\t[ %d ] %s", i, marcaOModelo[i - 1]);
     }
 }
-
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-
 /*
 ///MOSTRAMOS TODOS LAS MODELOS DEPENDIENDO LA MARCA
 void mostrarModelos(char* modelos[])
@@ -57,10 +53,6 @@ void mostrarModelos(char* modelos[])
     }
 }
 */
-
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-
 ///MOSTRAMOS TODOS LOS TIPOS DE COMBUSTIBLES O COLORES
 void mostrarCombustiblesOColores(char combustiblesOColores[][20])
 {
@@ -70,18 +62,16 @@ void mostrarCombustiblesOColores(char combustiblesOColores[][20])
     }
 }
 
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-
 ///ASIGNACIÓN MATRÍCULA (ASÍ NO SE REPITE)
-void asignarMatricula(char matricula[5])
+
+void asignarMatricula(char* matricula[5])
 {
     srand(time(NULL)) ;
-    matricula[0] = 'A' + rand()%26;
-    matricula[1] = 'A' + rand()%26;
-    matricula[2] = '0' + rand()%10;
-    matricula[3] = '0' + rand()%10;
-    matricula[4] = '\0' ;
+    matricula[0] = rand()%35+64 ;
+    matricula[1] = rand()%35+64 ;
+    matricula[2] = rand()%10+47 ;
+    matricula[3] = rand()%10+47 ;
+    matricula[4] = '/0' ;
     /*
     char primerLetra = 'A';
     char segundaLetra = 'A' ;
@@ -147,9 +137,6 @@ void asignarMatricula(char matricula[5])
     */
 }
 
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-
 ///CARGAR UN AUTO
 stAuto cargarUnAuto()
 {
@@ -203,9 +190,9 @@ stAuto cargarUnAuto()
     do
     {
         printf("\n|INGRESAR AÑO DEL AUTO|(MARCA: %s, MODELO: %i): ", marcasDeAuto[autito.marcasDeAuto-1], autito.modelo) ; ///REVISAR CÓMO MOSTRAR EL MODELO
-        scanf("%i", &autito.anio) ;
+        scanf("%i", &autito.ano) ;
     }
-    while(autito.anio < 2020 || autito.aniob > 2023) ;
+    while(autito.ano < 2020 || autito.ano > 2023) ;
 
     do
     {
@@ -215,7 +202,7 @@ stAuto cargarUnAuto()
         scanf("%i", &autito.tipoDeCombustible) ;
     }
     while(autito.tipoDeCombustible < 1 || autito.tipoDeCombustible > 5) ;
-/*
+
     do
     {
         printf("\n|INGRESAR LA MATRÍCULA DEL AUTO|: ") ;
@@ -227,9 +214,6 @@ stAuto cargarUnAuto()
         scanf("%s", &control) ;
     }
     while(tolower(control) == 's') ;
-*/
-    asignarMatricula(&autito.matricula) ;
-    printf("\n|MATRICULA|: %s\n", autito.matricula) ;
 
     ///system("cls") ;  ///CHEQUEAR CÓMO LIMPIAR DE A PARTES
 
@@ -257,35 +241,21 @@ stAuto cargarUnAuto()
     return autito ;
 }
 
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
+nodo* cargarListaDeAutos(nodo* listaAutos)
+{
+    nodo* nuevoNodo = crearNodo(cargarUnAuto()) ;
+    listaAutos = agregarAlPrincipio(listaAutos, nuevoNodo) ;
+    return listaAutos ;
+}
 
-void cargarArchivoDeAutos()
+void cargarArchivoDeAutos(nodo* listaAutos)
 {
     FILE *archivo = fopen(archivoAutos, "ab") ;
     if(archivo != NULL)
     {
-        stAuto autito = cargarUnAuto() ;
-        fwrite(&autito, sizeof(stAuto), 1, archivo) ;
+        listaAutos = cargarListaDeAutos(listaAutos) ;
+        fwrite(listaAutos, sizeof(nodo*), 1, archivo) ; ///REVISAR POR EL &listaAutos
         fclose(archivo) ;
     }
 }
 
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-
-nodo* cargarListaDeAutos(nodo* listaAutos)
-{
-    stAuto autito;
-    FILE *archivo = fopen(archivoAutos, "rb") ;
-    if(archivo != NULL)
-    {
-        while(fread(&autito, sizeof(stAuto), 1, archivo) > 0)
-        {
-            nodo* nuevoNodo = crearNodo(autito) ;
-            listaAutos = agregarAlPrincipio(listaAutos, nuevoNodo) ;
-        }
-        fclose(archivo) ;
-    }
-    return listaAutos ;
-}
