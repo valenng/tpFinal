@@ -44,7 +44,7 @@ void crearNuevoUsuario()
     scanf("%s", &nuevoCliente.apellido);
     fflush(stdin);
     printf("\nTiene licencia de conducir? \n\n1) SI\n\n2)  NO\n\nIngresar la opcion : ");
-    scanf("%i", &nuevoCliente.licencia); /// falta cerificacion
+    scanf("%i", &nuevoCliente.licencia); /// falta validar 1 o 2
 
     printf("\nIngresar el DNI de %s %s\n\nIngresar DNI:  ", nuevoCliente.nombre, nuevoCliente.apellido);
     scanf("%i", &nuevoCliente.DNI);
@@ -61,7 +61,7 @@ void crearNuevoUsuario()
 
         cargarClienteEnLista(nuevoCliente); /// carga del nuevo cliente en la lista y luevo en el archivo;
 
-         printf("USUARIO CREADO CON EXITO !!!");
+        printf("USUARIO CREADO CON EXITO !!!");
         sleep(5);
         menu();
 
@@ -165,12 +165,46 @@ void mostrarCliente(stClientes cliente)
 
 }
 
+void modificarCliente(int DNI)
+{
+    system("cls");
+    nodo2Clientes * lista2 = initLista2Cliente();
+    lista2 = clientesArchivoCargarLista();
+
+    stClientes cliente;
+    cliente = buscarStClientePorDNI(DNI);
+    mostrarCliente(cliente);
+    printf("\n\n        Modificar datos: \n    Nombre: ");
+    scanf("%s", &cliente.nombre );
+    printf("\n     Apellido: ");
+    scanf("%i", &cliente.apellido);
+    printf("\nTiene licencia de conducir? \n\n1) SI\n\n2)  NO\n\nIngresar la opcion : ");
+    scanf("%i", &cliente.licencia); /// falta validar 1 o 2
+
+    while(lista2!=NULL)
+    {
+
+        if(lista2->cliente.DNI ==  DNI)
+        {
+
+            lista2->cliente = cliente;
+
+            break;
+
+        }
+        else
+        {
+
+            lista2 = lista2->siguiente;
+
+        }
 
 
+    }
 
+    cargarListaDeClientes2EnArchivo(lista2);
 
-
-
+}
 
 
 

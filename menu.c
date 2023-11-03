@@ -6,6 +6,7 @@
 #include "Autos.h"
 #include "Clientes.h"
 #include "menu.h"
+#include "listas2Clientes.h"
 
 
 void menu ()
@@ -109,7 +110,7 @@ void usuario()
 
     default:
 
-
+        usuario();
 
         break;
 
@@ -118,12 +119,14 @@ void usuario()
 }
 
 
-void usuarioSesionIniciada(int DNI){
+void usuarioSesionIniciada(int DNI)
+{
 
 
-  int opcion;
+    int opcion;
 
-    do {
+    do
+    {
         system("cls");
 
         printf("Menu de Alquiler de Autos:\n\n");
@@ -137,46 +140,48 @@ void usuarioSesionIniciada(int DNI){
         printf("Ingrese la opción deseada: ");
         scanf("%d", &opcion);
 
-        switch (opcion) {
-            case 1:
-                /// falta funcion
-                break;
-            case 2:
-                /// falta funcion
-                break;
-            case 3:
-                /// falta funcion
-                break;
-            case 4:
-                /// falta funcion
-                break;
-            case 5:
-                /// falta funcion
-                break;
-            case 6:
-                system("cls");
-                printf("\n\n        Información personal");
-                mostrarInformacionDelCliente(DNI);
-                fflush(stdin);
-                esperarTecla();
-                usuarioSesionIniciada(DNI);
+        switch (opcion)
+        {
+        case 1:
+            /// falta funcion
+            break;
+        case 2:
+            /// falta funcion
+            break;
+        case 3:
+            /// falta funcion
+            break;
+        case 4:
+            /// falta funcion
+            break;
+        case 5:
+            /// falta funcion
+            break;
+        case 6:
+            system("cls");
+            printf("\n\n        Información personal");
+            mostrarInformacionDelCliente(DNI);
+            fflush(stdin);
+            esperarTecla();
+            usuarioSesionIniciada(DNI);
 
 
-                /// falta funcion
+        /// falta funcion
 
-            case 7:
+        case 7:
 
-                system("cls");
-                printf("\n\n        Sesion cerrada. ¡Hasta luego!");
-                sleep(3);
-                menu();
-                /// falta funcion
-                break;
-            default:
-                break;
+            system("cls");
+            printf("\n\n        Sesion cerrada. ¡Hasta luego!");
+            sleep(3);
+            menu();
+            /// falta funcion
+            break;
+        default:
+            break;
         }
 
-    } while (opcion != 7);
+    }
+    while (opcion != 7);
 }
 
 
@@ -185,19 +190,159 @@ void usuarioSesionIniciada(int DNI){
 void administracion()
 {
 
-      system("cls");
-      printf("Menu de Alquiler de Autos:\n\n\n1)    Menu autos\n2)  Menu clientes\n3)   Menu alquileres");
+    int opcion;
+    system("cls");
+    printf("Menu de Alquiler de Autos:\n\n\n1)    Menu autos\n2)  Menu clientes\n3)   Menu alquileres4)   volver\n\n     Ingresar opcion:  ");
 
-      printf("\n\n");
+    scanf("%i", &opcion);
+    switch(opcion)
+    {
 
+    case 1:
+
+        menuAutos();
+
+        break;
+    case 2:
+
+        menuCliente();
+
+        break;
+
+    case 3:
+
+        menuAlquiler();
+
+        break;
+
+    case 4:
+
+        administracion();
+
+        break;
+
+    default:
+
+        administracion();
+
+        break;
+
+    }
 
     system("cls");
 
 }
 
+void menuAutos()
+{
+
+    system("cls");
+    int opcion;
+    printf("1)Lista de autos\n  2)Busqueda De Auto\n    3)Autos disponibles\n   4)Agregar autos\n   5)Modificar auto\n    6)    Eliminar auto\n\n   ingresar opcion: ");
+    scanf("%i", &opcion);
 
 
-void esperarTecla() {
+}
+
+void menuCliente()
+{
+    system("cls");
+    int opcion, DNI;
+    printf("\n\n1)Info cliente\n    2)Lista de clientes\n   3)Modificar cliente\n   4)Eliminiar cliente\n   5)bloquear\n    6)Volver\n\n  ingresar opcion:");
+    scanf("%i", &opcion);
+
+    switch(opcion)
+    {
+
+    case 1:
+
+        system("cls");
+        printf("\n\nIngresar el DNI buscado:  ");
+        scanf("%i", &DNI);
+        if(verificarUsuario(DNI)==1){
+
+            mostrarInformacionDelCliente(DNI);
+            esperarTecla();
+
+        }else{
+            system("cls");
+            printf("\n\n    El DNI no existe");
+        }
+
+
+        break;
+    case 2:
+        system("cls");
+        nodo2Clientes * lista2 = initLista2Cliente();
+        lista2 = clientesArchivoCargarLista();
+        mostrarlistaClientesLista2(lista2);
+        esperarTecla();
+
+
+        break;
+    case 3:
+
+        system("cls");
+        printf("\n\n    Ingresar el cliente que queres modificar");
+        scanf("%i", &DNI);
+        if(verificarUsuario(DNI)==1){
+
+            modificarCliente(DNI);
+
+        }else{
+        system("cls");
+        printf("\n\n    El DNI no existe");
+        sleep(3);
+
+        }
+
+        break;
+    case 4:
+        system("cls");
+        printf("\n\nEliminar cliente: \n\n      Ingresar el DNI q quieres eliminar\n\n      Ingresar opcion:");
+        scanf("%i", &DNI);
+        if(verificarUsuario(DNI)== 1){
+            nodo2Clientes * lista2 = initLista2Cliente();
+            lista2 = clientesArchivoCargarLista();
+            lista2 = eliminarNodoLista2Clientes(lista2, DNI);
+            cargarListaDeClientes2EnArchivo(lista2);
+        }
+        break;
+    case 5:
+        /// falta funcion
+        break;
+    case 6:
+        /// falta funcion
+        break;
+
+    default:
+        menuCliente();
+        break;
+
+
+
+
+
+    }
+
+
+
+}
+
+void menuAlquiler()
+{
+
+    system("cls");
+    int opcion;
+    printf("\n\n    1)Promos alquiler\n    2)Alquiler de autos\n    3)Devolver auto\n   4)Mostrar lista de autos disponibles\n   5)buscar auto\n6   )Calcular tarifa\n\n   ingresar opcion:");
+    scanf("%i", &opcion);
+
+
+}
+
+
+void esperarTecla()
+{
     printf("\n\nPresiona una tecla para continuar...");
     getchar();
 }

@@ -66,7 +66,33 @@ nodo2Clientes* agregarNodo2EnLaLista2(nodo2Clientes* lista, nodo2Clientes* nuevo
 
 }
 
+nodo2Clientes* eliminarNodoLista2Clientes(nodo2Clientes* lista, int DNI) {
+    nodo2Clientes* actual = lista;
+    nodo2Clientes* anterior = NULL;
 
+    // Buscar el nodo con el DNI a eliminar
+    while (actual != NULL && actual->cliente.DNI != DNI) {
+        anterior = actual;
+        actual = actual->siguiente;
+    }
+
+    // Si el nodo con el DNI es encontrado
+    if (actual != NULL) {
+        // Si el nodo a eliminar es el primer nodo de la lista
+        if (anterior == NULL) {
+            lista = actual->siguiente;
+        } else {
+            anterior->siguiente = actual->siguiente;
+        }
+
+        // Liberar la memoria del nodo a eliminar
+        free(actual);
+        printf("Nodo con DNI %d eliminado.\n", DNI);
+        sleep(3);
+    }
+
+    return lista; // Devolver la lista modificada
+}
 
 nodo2Clientes * clientesArchivoCargarLista()
 {
