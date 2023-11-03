@@ -289,7 +289,7 @@
 	"Clientes.h"
 	"menu.h"
 
-1699017280 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\clientes.c
+1699045470 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -315,7 +315,7 @@
 
 1698924824 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\autos.h
 
-1699018462 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\listas2clientes.c
+1699045770 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\listas2clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -331,7 +331,7 @@
 
 1698924824 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\menu.h
 
-1698967571 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\menu.c
+1699045770 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -339,6 +339,7 @@
 	"Autos.h"
 	"Clientes.h"
 	"menu.h"
+	"listas2Clientes.h"
 
 1698924824 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\arbolgeneral.c
 	<stdlib.h>

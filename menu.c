@@ -192,7 +192,7 @@ void administracion()
 
     int opcion;
     system("cls");
-    printf("Menu de Alquiler de Autos:\n\n\n1)    Menu autos\n2)  Menu clientes\n3)   Menu alquileres4)   volver\n\n     Ingresar opcion:  ");
+    printf("Menu de Alquiler de Autos:\n\n\n1)    Menu autos\n2)    Menu clientes\n3)    Menu alquileres\n4)    volver\n\n     Ingresar opcion:  ");
 
     scanf("%i", &opcion);
     switch(opcion)
@@ -217,7 +217,7 @@ void administracion()
 
     case 4:
 
-        administracion();
+        menu();
 
         break;
 
@@ -248,7 +248,7 @@ void menuCliente()
 {
     system("cls");
     int opcion, DNI;
-    printf("\n\n1)Info cliente\n    2)Lista de clientes\n   3)Modificar cliente\n   4)Eliminiar cliente\n   5)bloquear\n    6)Volver\n\n  ingresar opcion:");
+    printf("\n\n    1)Info cliente\n    2)Lista de clientes\n    3)Modificar cliente\n    4)Eliminiar cliente\n    5)bloquear\n    6)Volver\n\n    ingresar opcion:");
     scanf("%i", &opcion);
 
     switch(opcion)
@@ -259,6 +259,7 @@ void menuCliente()
         system("cls");
         printf("\n\nIngresar el DNI buscado:  ");
         scanf("%i", &DNI);
+        fflush(stdin);
         if(verificarUsuario(DNI)==1){
 
             mostrarInformacionDelCliente(DNI);
@@ -267,7 +268,10 @@ void menuCliente()
         }else{
             system("cls");
             printf("\n\n    El DNI no existe");
+            sleep(3);
         }
+
+        menuCliente();
 
 
         break;
@@ -276,19 +280,22 @@ void menuCliente()
         nodo2Clientes * lista2 = initLista2Cliente();
         lista2 = clientesArchivoCargarLista();
         mostrarlistaClientesLista2(lista2);
+        fflush(stdin);
         esperarTecla();
+        menuCliente();
 
 
         break;
     case 3:
 
         system("cls");
-        printf("\n\n    Ingresar el cliente que queres modificar");
+        printf("\n\n    Ingresar el cliente que queres modificar: \n\n  Ingresar opcion:  ");
         scanf("%i", &DNI);
         if(verificarUsuario(DNI)==1){
 
             modificarCliente(DNI);
-
+            printf("\n\n    Modificado con exito");
+            sleep(3);
         }else{
         system("cls");
         printf("\n\n    El DNI no existe");
@@ -296,23 +303,35 @@ void menuCliente()
 
         }
 
+        menuCliente();
+
         break;
     case 4:
+        /// verificar que no tenga un auto en alquiler
+
         system("cls");
         printf("\n\nEliminar cliente: \n\n      Ingresar el DNI q quieres eliminar\n\n      Ingresar opcion:");
         scanf("%i", &DNI);
         if(verificarUsuario(DNI)== 1){
             nodo2Clientes * lista2 = initLista2Cliente();
             lista2 = clientesArchivoCargarLista();
+            mostrarlistaClientesLista2(lista2);
+            esperarTecla();
+
             lista2 = eliminarNodoLista2Clientes(lista2, DNI);
             cargarListaDeClientes2EnArchivo(lista2);
+            printf("---------------------------\n\n-------------------");
+            mostrarlistaClientesLista2(lista2);
+            esperarTecla();
         }
+        menuCliente();
         break;
     case 5:
         /// falta funcion
         break;
     case 6:
         /// falta funcion
+        menu();
         break;
 
     default:

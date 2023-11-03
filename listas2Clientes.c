@@ -87,8 +87,8 @@ nodo2Clientes* eliminarNodoLista2Clientes(nodo2Clientes* lista, int DNI) {
 
         // Liberar la memoria del nodo a eliminar
         free(actual);
-        printf("Nodo con DNI %d eliminado.\n", DNI);
-        sleep(3);
+        printf("DNI %d eliminado.\n", DNI);
+        esperarTecla();
     }
 
     return lista; // Devolver la lista modificada

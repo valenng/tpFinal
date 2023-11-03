@@ -61,7 +61,7 @@ void crearNuevoUsuario()
 
         cargarClienteEnLista(nuevoCliente); /// carga del nuevo cliente en la lista y luevo en el archivo;
 
-        printf("USUARIO CREADO CON EXITO !!!");
+        printf("\n\n    USUARIO CREADO CON EXITO !!!");
         sleep(5);
         menu();
 
@@ -174,10 +174,11 @@ void modificarCliente(int DNI)
     stClientes cliente;
     cliente = buscarStClientePorDNI(DNI);
     mostrarCliente(cliente);
-    printf("\n\n        Modificar datos: \n    Nombre: ");
+    printf("\n\n        Modificar datos: \n\n    Nombre: ");
     scanf("%s", &cliente.nombre );
-    printf("\n     Apellido: ");
+    printf("\n    Apellido: ");
     scanf("%i", &cliente.apellido);
+    fflush(stdin);
     printf("\nTiene licencia de conducir? \n\n1) SI\n\n2)  NO\n\nIngresar la opcion : ");
     scanf("%i", &cliente.licencia); /// falta validar 1 o 2
 
