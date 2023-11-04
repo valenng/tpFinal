@@ -1,32 +1,59 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include <locale.h>
 
-#include "Clientes.h"
-#include "menu.h"
+#include "Autos.h"
 #include "arbolGeneral.h"
 
-nodoArbol * initNarbol()
+nodoArbol* inicArbol()
 {
-
     return NULL;
-
 }
 
-
-nodoArbol * crearNodoArbol(stAuto automovil)
+nodoArbol* crearNodoArbol(stAuto dato)
 {
-    nodoArbol * nuevoNodoArbol = (nodoArbol *) malloc (sizeof(nodoArbol));
-
-    nuevoNodoArbol->automovil = automovil;
-    nuevoNodoArbol->izq = NULL;
-    nuevoNodoArbol->dere = NULL;
+    nodoArbol* nuevoNodoArbol = (nodoArbol*) malloc(sizeof(nodoArbol));
+    nuevoNodoArbol->autito = dato;
+    nuevoNodoArbol->izquierda = NULL;
+    nuevoNodoArbol->derecha = NULL;
 
     return nuevoNodoArbol;
 }
 
+nodoArbol* insertarEnArbolAutos(nodoArbol* arbolAutos, stAuto autito)
+{
+    if(arbolAutos == NULL)
+    {
+        arbolAutos = crearNodoArbol(autito);
+    }
+    else
+    {
+        if(autito.marcasDeAuto > arbolAutos->autito.marcasDeAuto) ///marcasDeAuto es de tipo int, por lo que más fácil de acomodar en un árbol
+        {
+            arbolAutos->derecha = insertarEnArbolAutos(arbolAutos->derecha, autito);
+        }
+        else
+        {
+            arbolAutos->izquierda = insertarEnArbolAutos(arbolAutos->izquierda, autito);
+        }
+    }
+    return arbolAutos;
+}
 
-nodoArbol * busquedaArbolGeneral(nodoArbol* arbol, char buscarMaticula)
+
+void mostrarArbolPreOrden(nodoArbol* arbolAutos) ///RAÍZ, IZQ, DER.
+{
+    if(arbolAutos != NULL)
+    {
+        printf("%d", arbolAutos->autito);
+        mostrarArbolPreOrden(arbolAutos->izquierda);
+        mostrarArbolPreOrden(arbolAutos->derecha);
+    }
+}
+
+/*
+nodoArbol* busquedaArbolGeneral(nodoArbol* arbol, char buscarMaticula)
 {
 
     nodoArbol* rta = NULL;
@@ -61,44 +88,4 @@ nodoArbol * busquedaArbolGeneral(nodoArbol* arbol, char buscarMaticula)
     return rta;
 
 }
-
-
-nodoArbol * insertarEnArbolGeneral(nodoArbol* arbolGeneral, stAuto automovil){
-
-if(arbolGeneral != NULL){
-
-    arbolGeneral = crearNodoArbol(automovil);
-
-}else{
-
-    if(automovil.matricula > arbolGeneral->automovil.matricula){
-
-        arbolGeneral->dere = insertarEnArbolGeneral(arbolGeneral->dere, automovil);
-
-    }else{
-
-        arbolGeneral->izq = insertarEnArbolGeneral(arbolGeneral->izq, automovil);
-
-
-    }
-
-}
-
-return arbolGeneral;
-
-
-}
-
-
-void mostrarArbolPreorden(nodoArbol* arbol)
-{
-    if(arbol != NULL){
-
-        printf("%d", arbol->automovil);
-        mostrarArbolPreorden(arbol->izq);
-        mostrarArbolPreorden(arbol->izq);
-
-    }
-
-}
-
+*/

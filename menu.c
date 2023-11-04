@@ -77,17 +77,17 @@ void usuario()
 
             system("cls");
             printf("\n\n        Inicio de sesion");
-            sleep(3);
+            ///sleep(3);
             usuarioSesionIniciada(dni);
 
         }
         else
         {
 
-            sleep(3);
+            ///sleep(3);
             system("cls");
             printf("el usuario no existe");
-            sleep(3);
+            ///sleep(3);
 
             usuario();
 
@@ -172,7 +172,7 @@ void usuarioSesionIniciada(int DNI)
 
             system("cls");
             printf("\n\n        Sesion cerrada. ¡Hasta luego!");
-            sleep(3);
+            ///sleep(3);
             menu();
             /// falta funcion
             break;
@@ -268,7 +268,7 @@ void menuCliente()
         }else{
             system("cls");
             printf("\n\n    El DNI no existe");
-            sleep(3);
+            ///sleep(3);
         }
 
         menuCliente();
@@ -295,11 +295,11 @@ void menuCliente()
 
             modificarCliente(DNI);
             printf("\n\n    Modificado con exito");
-            sleep(3);
+            ///sleep(3);
         }else{
         system("cls");
         printf("\n\n    El DNI no existe");
-        sleep(3);
+        ///sleep(3);
 
         }
 

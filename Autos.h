@@ -5,7 +5,7 @@ typedef struct
 {
     int marcasDeAuto;
     int modelo;
-    int ano;
+    int anio;
     int tipoDeCombustible;
     char matricula[5];
     int color;
@@ -13,13 +13,16 @@ typedef struct
     float kilometrosAcumulados;
     float valorInicial ;
     int disponibilidad;  ///1- DISPONIBLE / 0- NO DISPONIBLE
-
 }stAuto ;
 
 void mostrarMarcasOModelos(char[][20]) ;
 void mostrarCombustiblesOColores(char[][20]) ;
 
-void asignarMatricula(char* []) ;
+void asignarMatricula(char[]) ;
 stAuto cargarUnAuto() ;
+void cargarArchivoDeAutos() ;
+
+
+
 
 #endif // AUTOS_H_INCLUDED

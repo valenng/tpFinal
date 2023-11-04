@@ -62,7 +62,7 @@ void crearNuevoUsuario()
         cargarClienteEnLista(nuevoCliente); /// carga del nuevo cliente en la lista y luevo en el archivo;
 
         printf("\n\n    USUARIO CREADO CON EXITO !!!");
-        sleep(5);
+        ///sleep(5);
         menu();
 
     }
@@ -70,7 +70,7 @@ void crearNuevoUsuario()
     {
 
         printf("El dni ya existe ");
-        sleep(5);
+        ///sleep(5);
         menu();
 
 

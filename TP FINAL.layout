@@ -2,36 +2,14 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="menu.c" open="1" top="1" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Func-LISTAS-autos.c" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3563" topLine="165" />
+			<Cursor1 position="2577" topLine="27" />
 		</Cursor>
 	</File>
-	<File name="Clientes.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="arbolGeneral.c" open="1" top="1" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="318" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="arbolGeneral.c" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="460" topLine="15" />
-		</Cursor>
-	</File>
-	<File name="Clientes.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="280" topLine="0" />
-		</Cursor>
-		<Folding>
-			<Collapse line="33" />
-			<Collapse line="84" />
-			<Collapse line="100" />
-			<Collapse line="117" />
-			<Collapse line="149" />
-		</Folding>
-	</File>
-	<File name="Autos.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="3" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="7887" topLine="225" />
+			<Cursor1 position="1310" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="main.c" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -39,37 +17,48 @@
 			<Cursor1 position="187" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Func-LISTAS-autos.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Autos.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2577" topLine="49" />
+			<Cursor1 position="1879" topLine="187" />
 		</Cursor>
 	</File>
-	<File name="Prots-LISTAS-autos.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Clientes.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="307" topLine="0" />
+			<Cursor1 position="318" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Autos.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Autos.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="467" topLine="0" />
+			<Cursor1 position="531" topLine="6" />
 		</Cursor>
 	</File>
-	<File name="arbolGeneral.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="arbolGeneral.h" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="66" topLine="0" />
+			<Cursor1 position="31" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="listas2Clientes.c" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+	<File name="Clientes.c" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="694" topLine="31" />
+		</Cursor>
+	</File>
+	<File name="Prots-LISTAS-autos.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="318" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="menu.c" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="5641" topLine="327" />
+		</Cursor>
+	</File>
+	<File name="listas2Clientes.c" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2055" topLine="13" />
 		</Cursor>
 		<Folding>
 			<Collapse line="9" />
 			<Collapse line="16" />
-			<Collapse line="46" />
-			<Collapse line="71" />
-			<Collapse line="106" />
-			<Collapse line="137" />
 		</Folding>
 	</File>
 </CodeBlocks_layout_file>
