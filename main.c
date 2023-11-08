@@ -6,11 +6,16 @@
 
 #include "menu.h"
 
+#include "Autos.h"
+
 int main()
 {
     setlocale(LC_ALL, "") ;
-    menu();
+    ///menu();
 
+    stAuto autito ;
+    autito = cargarUnAuto() ;
+    mostrarUnAuto(autito) ;
 
     return 0;
 }
