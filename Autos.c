@@ -31,7 +31,7 @@ char modelosRenault[10][20] = {"Sandero", "Logan", "Kangoo", "KWID", "Captur", "
 /// 10- NISSAN
 char modelosNissan[10][20] = {"Versa", "Sentra", "Frontier", "Kicks", "March", "Note", "Murano", "Leaf", "X-Trail", "Versa V-Drive"};
 
-char* modelosPorMarca[10][20] = {modelosToyota, modelosFiat, modelosCitroen, modelosAudi, modelosPeugeot, modelosVolkswagen, modelosFord, modelosChevrolet, modelosRenault, modelosNissan} ;
+char* modelosPorMarca[10] = {modelosToyota, modelosFiat, modelosCitroen, modelosAudi, modelosPeugeot, modelosVolkswagen, modelosFord, modelosChevrolet, modelosRenault, modelosNissan} ;
 
 char tipoCombustibles[5][20] = {"Infinia", "Súper", "Infinia Diesel", "Ultra Diesel", "Diesel 500"};
 
@@ -185,7 +185,7 @@ void mostrarUnAuto(stAuto autito)
 {
     printf("\n-----------------------------------------") ;
     printf("\n|MARCA|: %s", marcasDeAuto[autito.marcasDeAuto-1]) ;
-    printf("\n|MODELO|: %s", modelosPorMarca[autito.marcasDeAuto-1][autito.modelo-1]) ; ///REVISAR
+    printf("\n|MODELO|: %s", modelosPorMarca[autito.marcasDeAuto-1]+20*(autito.modelo-1)) ;
     printf("\n|AÑO|: %i", autito.anio) ;
     printf("\n|TIPO DE COMBUSTIBLE|: %s", tipoCombustibles[autito.tipoDeCombustible-1]) ;
     printf("\n|MATRICULA|: %s", autito.matricula) ;
@@ -214,7 +214,7 @@ void cargarArchivoDeAutos()
 //-----------------------------------------------------------------------
 //-----------------------------------------------------------------------
 
-nodo* cargarListaDeAutos(nodo* listaAutos)
+nodo* pasarArchivoALista(nodo* listaAutos) ///REVISAR
 {
     stAuto autito;
     FILE *archivo = fopen(archivoAutos, "rb") ;
@@ -232,5 +232,74 @@ nodo* cargarListaDeAutos(nodo* listaAutos)
 
 //-----------------------------------------------------------------------
 //-----------------------------------------------------------------------
+
+void pasarListaAArchivoWB(nodo* listaAutos)
+{
+    FILE* archivo = fopen(archivoAutos, "wb") ;
+    if(archivo != NULL)
+    {
+        while(listaAutos != NULL)
+        {
+            fwrite((&listaAutos->autito), sizeof(stAuto), 1, archivo) ;
+            listaAutos = listaAutos->siguiente ;
+        }
+        fclose(archivo) ;
+    }
+}
+
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+
+char buscarMatricula(FILE* archivo)
+{
+    stAuto autito;
+    char matricula[5] ;
+    int i=0;
+    int posicion = -1;
+
+    printf("\n|INGRESE LA MATRICULA BUSCADA|: ") ;
+    fflush(stdin) ;
+    gets(matricula) ;
+    while(fread(&autito, sizeof(stAuto), 1, archivo) > 0)
+    {
+        printf("\n|INGRESE LA MATRICULA BUSCADA|: ") ;
+        fflush(stdin) ;
+        gets(matricula) ;
+
+        if(strcmpi(autito.matricula, matricula) == 0)
+        {
+            posicion = i;
+            i++;
+        }
+    }
+    return posicion ;
+}
+
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+
+void ingresarMatricula(char matricula[5])
+{
+    printf("\n|INGRESE LA MATRICULA BUSCADA|: ") ;
+    fflush(stdin) ;
+    gets(matricula) ;
+}
+
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+
+void borrarUnAutoDelArchivo()
+{
+    char matricula[5] ;
+    FILE* archivo = fopen(archivoAutos, "rb") ;
+    if(archivo != NULL)
+    {
+        nodo* aux = pasarArchivoALista(archivo) ;
+        ingresarMatricula(matricula) ;
+        aux = eliminarNodo(aux, matricula) ;
+        fclose(archivo) ;
+        pasarListaAArchivoWB(aux) ;
+    }
+}
 
 ///FUNCIÓN PARA CALCULAR LA TARIFA DE UN AUTO.

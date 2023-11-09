@@ -85,12 +85,12 @@ void recorrerYMostrar(nodo* lista)
         seguidora = seguidora->siguiente ;
     }
 }
-
-nodo* eliminarNodo(char nombre[30], nodo* lista)
+*/
+nodo* eliminarNodo(nodo* lista, char matricula[])
 {
     nodo* aux;
     nodo* anterior ;
-    if((lista != NULL) && (strcmpi(nombre, lista->persona.nombre) == 0))
+    if((lista != NULL) && (strcmpi(matricula, lista->autito.matricula) == 0))
     {
         aux = lista;
         lista = lista->siguiente ;
@@ -99,7 +99,7 @@ nodo* eliminarNodo(char nombre[30], nodo* lista)
     else
     {
         aux = lista ;
-        while((aux != NULL) && (strcmpi(nombre, aux->persona.nombre) != 0))
+        while((aux != NULL) && (strcmpi(matricula, aux->autito.matricula) != 0))
         {
             anterior = aux ;
             aux = aux->siguiente ;
@@ -113,6 +113,6 @@ nodo* eliminarNodo(char nombre[30], nodo* lista)
     return lista;
 }
 
-*/
+
 
 
