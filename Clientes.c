@@ -6,28 +6,7 @@
 #define CLIENTE_ARCHIVO "archivoClientes.bin" // const nombre del archivo
 
 #include "Clientes.h"
-#include "listas2Clientes.h"
-
-
-
-int verificarUsuario(int DNI)
-{
-
-
-    int salida = 0;
-    nodo2Clientes *  listaClientes = initLista2Cliente();
-    listaClientes = clientesArchivoCargarLista();
-
-    if(buscarDNIlista2Cliente(listaClientes, DNI) != NULL)
-    {
-
-        salida = 1;
-
-    }
-
-    return salida;
-
-}
+#include "arbolGeneral.h"
 
 
 void crearNuevoUsuario()
@@ -50,17 +29,18 @@ void crearNuevoUsuario()
     scanf("%i", &nuevoCliente.DNI);
 
 ///---------
-/// verificar estado de DNI y carga la lista en el arhivo
+/// verificar estado de DNI y carga EN EL ARBOL en el arhivo
 
-    nodo2Clientes* listaClientes = clientesArchivoCargarLista(); // se carga en la la lista los clientes. se pasan los clientes del archivo a la lista
+    nodoArbol* arbolCliente = descargaDeClientesDeArchivoEnArbol();
+    nodoArbol* nodoCliente = busquedaDeClienteEnArbol(arbolCliente, nuevoCliente.DNI);
 
 
 
-    if(buscarDNIlista2Cliente(listaClientes, nuevoCliente.DNI) == NULL)
+    if(nodoCliente == NULL)
     {
-
-        cargarClienteEnLista(nuevoCliente); /// carga del nuevo cliente en la lista y luevo en el archivo;
-
+        nodoArbol* nodoNuevoCliente = crearNodoArbolCliente(nuevoCliente);
+        arbolCliente = insertarEnArbolNodoCliente(arbolCliente,nodoNuevoCliente );
+        cargarArbolDeClientesEnArchivo(arbolCliente);
         printf("\n\n    USUARIO CREADO CON EXITO !!!");
         ///sleep(5);
         menu();
@@ -80,7 +60,7 @@ void crearNuevoUsuario()
 
 }
 
-
+/*
 void cargarClienteEnLista(stClientes nuevoCliente)
 {
 
@@ -95,7 +75,7 @@ void cargarClienteEnLista(stClientes nuevoCliente)
 
 
 }
-
+*/
 
 void mostrarInformacionDelCliente(int DNI)
 {
@@ -103,10 +83,11 @@ void mostrarInformacionDelCliente(int DNI)
 
 
     stClientes cliente;
-    cliente = buscarStClientePorDNI(DNI);
+    nodoArbol* arbol = descargaDeClientesDeArchivoEnArbol();
+    nodoArbol* clienteNodo = busquedaDeClienteEnArbol(arbol, DNI);
 
 
-    mostrarCliente(cliente);
+    mostrarCliente(clienteNodo->clientes);
 
 
 
@@ -114,11 +95,12 @@ void mostrarInformacionDelCliente(int DNI)
 
 
 
+/*
 stClientes buscarStClientePorDNI(int DNI)
 {
 
     stClientes clienteEncontrado;
-    nodo2Clientes * lista = clientesArchivoCargarLista();
+    nodo2Clientes * nodo = clientesArchivoCargarLista();
 
     while(lista!=NULL)
     {
@@ -145,6 +127,7 @@ stClientes buscarStClientePorDNI(int DNI)
 
 
 }
+*/
 
 void mostrarCliente(stClientes cliente)
 {
@@ -165,15 +148,13 @@ void mostrarCliente(stClientes cliente)
 
 }
 
-void modificarCliente(int DNI)
+nodoArbol* modificarCliente(int DNI, nodoArbol* arbol)
 {
     system("cls");
-    nodo2Clientes * lista2 = initLista2Cliente();
-    lista2 = clientesArchivoCargarLista();
 
     stClientes cliente;
-    cliente = buscarStClientePorDNI(DNI);
-    mostrarCliente(cliente);
+    nodoArbol* nodoCliente = busquedaDeClienteEnArbol(arbol, DNI);
+    mostrarCliente(nodoCliente->clientes);
     printf("\n\n        Modificar datos: \n\n    Nombre: ");
     scanf("%s", &cliente.nombre );
     printf("\n    Apellido: ");
@@ -182,28 +163,11 @@ void modificarCliente(int DNI)
     printf("\nTiene licencia de conducir? \n\n1) SI\n\n2)  NO\n\nIngresar la opcion : ");
     scanf("%i", &cliente.licencia); /// falta validar 1 o 2
 
-    while(lista2!=NULL)
-    {
-
-        if(lista2->cliente.DNI ==  DNI)
-        {
-
-            lista2->cliente = cliente;
-
-            break;
-
-        }
-        else
-        {
-
-            lista2 = lista2->siguiente;
-
-        }
+    arbol = eliminarNodoarbol(arbol, DNI);
+    nodoArbol* rta = insertarEnArbolNodoCliente(arbol, cliente);
 
 
-    }
-
-    cargarListaDeClientes2EnArchivo(lista2);
+   return rta;
 
 }
 

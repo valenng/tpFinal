@@ -7,6 +7,7 @@
 #include "Clientes.h"
 #include "menu.h"
 #include "listas2Clientes.h"
+#include "arbolGeneral.h"
 
 
 void menu ()
@@ -51,7 +52,8 @@ void usuario()
 
     system("cls");
 
-    int opcion, verificar;
+    int opcion;
+    nodoArbol * nodoCliente;
     printf("\n      USUARIO\n\n 1)  Ingresar\n\n 2)  Nuevo usuario\n\n 3)  volver\n\n\ningresar opcio:  ");
     scanf("%i", &opcion);
 
@@ -70,9 +72,10 @@ void usuario()
         scanf("%i", &dni);
 
         /// verificar usuario
-        verificar = verificarUsuario(dni);
+        nodoArbol* arbol = descargaDeClientesDeArchivoEnArbol();
+        nodoCliente = busquedaDeClienteEnArbol(arbol, dni);
 
-        if(verificar != 0)
+        if(nodoCliente != NULL)
         {
 
             system("cls");
@@ -84,10 +87,10 @@ void usuario()
         else
         {
 
-            ///sleep(3);
+            sleep(3);
             system("cls");
             printf("el usuario no existe");
-            ///sleep(3);
+           sleep(3);
 
             usuario();
 
@@ -246,6 +249,7 @@ void menuAutos()
 
 void menuCliente()
 {
+    nodoArbol* arbol = descargaDeClientesDeArchivoEnArbol();
     system("cls");
     int opcion, DNI;
     printf("\n\n    1)Info cliente\n    2)Lista de clientes\n    3)Modificar cliente\n    4)Eliminiar cliente\n    5)bloquear\n    6)Volver\n\n    ingresar opcion:");
@@ -260,7 +264,7 @@ void menuCliente()
         printf("\n\nIngresar el DNI buscado:  ");
         scanf("%i", &DNI);
         fflush(stdin);
-        if(verificarUsuario(DNI)==1){
+        if(busquedaDeClienteEnArbol(arbol, DNI)== NULL){
 
             mostrarInformacionDelCliente(DNI);
             esperarTecla();
@@ -277,9 +281,8 @@ void menuCliente()
         break;
     case 2:
         system("cls");
-        nodo2Clientes * lista2 = initLista2Cliente();
-        lista2 = clientesArchivoCargarLista();
-        mostrarlistaClientesLista2(lista2);
+
+        mostrarArbolInOrden(arbol);
         fflush(stdin);
         esperarTecla();
         menuCliente();
@@ -291,10 +294,11 @@ void menuCliente()
         system("cls");
         printf("\n\n    Ingresar el cliente que queres modificar: \n\n  Ingresar opcion:  ");
         scanf("%i", &DNI);
-        if(verificarUsuario(DNI)==1){
+        if(busquedaDeClienteEnArbol(arbol, DNI) != NULL){
 
-            modificarCliente(DNI);
+            arbol = modificarCliente(DNI, arbol);
             printf("\n\n    Modificado con exito");
+            cargarArbolDeClientesEnArchivo(arbol);
             ///sleep(3);
         }else{
         system("cls");
@@ -312,17 +316,12 @@ void menuCliente()
         system("cls");
         printf("\n\nEliminar cliente: \n\n      Ingresar el DNI q quieres eliminar\n\n      Ingresar opcion:");
         scanf("%i", &DNI);
-        if(verificarUsuario(DNI)== 1){
-            nodo2Clientes * lista2 = initLista2Cliente();
-            lista2 = clientesArchivoCargarLista();
-            mostrarlistaClientesLista2(lista2);
+        if(busquedaDeClienteEnArbol(arbol, DNI) != NULL){
+            arbol = eliminarNodoarbol(arbol, DNI);
+            cargarArbolDeClientesEnArchivo(arbol);
             esperarTecla();
 
-            lista2 = eliminarNodoLista2Clientes(lista2, DNI);
-            cargarListaDeClientes2EnArchivo(lista2);
-            printf("---------------------------\n\n-------------------");
-            mostrarlistaClientesLista2(lista2);
-            esperarTecla();
+
         }
         menuCliente();
         break;
