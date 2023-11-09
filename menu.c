@@ -87,10 +87,10 @@ void usuario()
         else
         {
 
-            sleep(3);
+            ///sleep(3);
             system("cls");
             printf("el usuario no existe");
-           sleep(3);
+            ///sleep(3);
 
             usuario();
 
@@ -241,6 +241,9 @@ void menuAutos()
 
     system("cls");
     int opcion;
+
+    printf("\n| [ 1 ] AGREGAR AUTOS\n") ; ///
+
     printf("1)Lista de autos\n  2)Busqueda De Auto\n    3)Autos disponibles\n   4)Agregar autos\n   5)Modificar auto\n    6)    Eliminar auto\n\n   ingresar opcion: ");
     scanf("%i", &opcion);
 

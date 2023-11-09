@@ -12,8 +12,8 @@ int main()
 {
     setlocale(LC_ALL, "") ;
     ///menu();
-
     stAuto autito ;
+
     autito = cargarUnAuto() ;
     mostrarUnAuto(autito) ;
 

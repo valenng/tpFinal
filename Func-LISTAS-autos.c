@@ -40,6 +40,24 @@ nodo* agregarAlPrincipio(nodo* lista, nodo* nuevoNodo)
     }
     return lista;
 }
+
+nodo* agregarAlFinal(nodo* lista, nodo* nuevoNodo)
+{
+    if(lista == NULL)
+    {
+        lista = agregarAlPrincipio(lista, nuevoNodo) ;
+    }
+    else
+    {
+        nodo* seguidora = lista;
+        while(seguidora->siguiente != NULL)
+        {
+            seguidora = seguidora->siguiente ;
+        }
+        seguidora->siguiente = nuevoNodo ;
+    }
+    return lista;
+}
 /*
 nodo* agregarEnOrden(nodo* lista, nodo* nuevoNodo)
 {

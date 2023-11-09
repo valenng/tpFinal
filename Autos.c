@@ -5,8 +5,10 @@
 
 #include "Autos.h" ///-> LIB. AUTOS C/PROTOTIPADOS Y ESTRUCTURA
 #include "Prots-LISTAS-autos.h"
+#include "ArregloDeListas.h"
 
-char archivoAutos[] = "ArchiAutos" ;
+char maxValorMatricula[3] = {25,25,99} ;
+char ultimaMatricula[3] = {0,0,0} ;
 
 char marcasDeAuto[10][20] = {"Toyota", "Fiat", "Citroën", "Audi", "Peugeot", "Volkswagen", "Ford", "Chevrolet", "Renault", "Nissan"} ;
 
@@ -76,6 +78,20 @@ void asignarMatricula(char matricula[5])
     matricula[4] = '\0' ;
 }
 
+void nuevaMatriculaR(int ultimaMatricula[3], int maxValues[3], int numElements) ///REVISAR
+{
+    if (ultimaMatricula[numElements-1] < maxValues[numElements-1])
+    {
+        ultimaMatricula[numElements-1] += 1;
+    } else {
+        if (numElements-1 > 0)
+        {
+            ultimaMatricula[numElements-1] = 0;
+            nuevaMatriculaR(ultimaMatricula, maxValues, numElements-1);
+        }
+    }
+}
+
 ///CARGAR UN AUTO
 stAuto cargarUnAuto()
 {
@@ -141,7 +157,7 @@ stAuto cargarUnAuto()
     }
     while(autito.tipoDeCombustible < 1 || autito.tipoDeCombustible > 5) ;
 
-    asignarMatricula(&autito.matricula) ;
+    asignarMatricula(autito.matricula) ;
     printf("\n|MATRICULA|: %s\n", autito.matricula) ;
 
     ///system("cls") ;  ///CHEQUEAR CÓMO LIMPIAR DE A PARTES
@@ -214,7 +230,7 @@ void cargarArchivoDeAutos()
 //-----------------------------------------------------------------------
 //-----------------------------------------------------------------------
 
-nodo* pasarArchivoALista(nodo* listaAutos) ///REVISAR
+nodo* pasarArchivoALista(nodo* listaAutos)
 {
     stAuto autito;
     FILE *archivo = fopen(archivoAutos, "rb") ;
@@ -299,6 +315,39 @@ void borrarUnAutoDelArchivo()
         aux = eliminarNodo(aux, matricula) ;
         fclose(archivo) ;
         pasarListaAArchivoWB(aux) ;
+    }
+}
+
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+
+void buscarAuto(int marcaAuto)
+{
+    stAutosXMarca* autosXMarca = (stAutosXMarca*) malloc(10*sizeof(stAutosXMarca)) ;
+    cargarArregloAutos(autosXMarca) ;
+
+    int flag = 0;
+
+    stAutosXMarca autoDeLaMarca ;
+
+    for(int i=0; i<10 && !flag; i++)
+    {
+        if(autosXMarca[i].marcaDeAuto == marcaAuto)
+        {
+            autoDeLaMarca = autosXMarca[i] ;
+            flag = 1;
+        }
+    }
+    if(!flag)
+    {
+        printf("\n|NO SE ENCONTRÓ LA MARCA|.\n") ;
+    }
+    else
+    {
+        for(int j=0; j < sizeof(autoDeLaMarca.listaAutos); j++)
+        {
+            mostrarUnAuto(autoDeLaMarca.listaAutos[j].autito) ;
+        }
     }
 }
 

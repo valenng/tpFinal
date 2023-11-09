@@ -1,31 +1,32 @@
 # depslib dependency file v1.0
-1699457003 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.c
+1699556361 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"Autos.h"
 	"Prots-LISTAS-autos.h"
+	"ArregloDeListas.h"
 
-1699457036 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.h
+1699556079 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.h
 
 1699456253 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\prots-listas-autos.h
 	"Autos.h"
 
-1699071048 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.c
+1699540389 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"Clientes.h"
-	"listas2Clientes.h"
+	"arbolGeneral.h"
 
 1698935399 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.h
 
 1698787839 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\listas2clientes.h
 	"Clientes.h"
 
-1699456253 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\func-listas-autos.c
+1699546559 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\func-listas-autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -40,7 +41,7 @@
 	<locale.h>
 	"listas2Clientes.h"
 
-1699453208 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\main.c
+1699556437 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -50,7 +51,7 @@
 
 1698788979 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.h
 
-1699071079 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.c
+1699556409 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -59,8 +60,9 @@
 	"Clientes.h"
 	"menu.h"
 	"listas2Clientes.h"
+	"arbolGeneral.h"
 
-1699069210 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arbolgeneral.c
+1699540389 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arbolgeneral.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
@@ -68,7 +70,7 @@
 	"Autos.h"
 	"arbolGeneral.h"
 
-1699064731 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arbolgeneral.h
+1699540389 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arbolgeneral.h
 	"Autos.h"
 	"Clientes.h"
 	"menu.h"
@@ -364,13 +366,13 @@
 	"Autos.h"
 	"Prots-LISTAS-autos.h"
 
-1699456253 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arreglodelistas.c
+1699556026 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arreglodelistas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"ArregloDeListas.h"
 
-1699456253 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arreglodelistas.h
+1699556275 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arreglodelistas.h
 	"Prots-LISTAS-autos.h"
 

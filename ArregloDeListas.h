@@ -5,9 +5,9 @@
 
 typedef struct
 {
-    stAuto marcasDeAuto ;
-    nodo* lista ;
-}stCelda;
+    int marcaDeAuto ;
+    nodo* listaAutos ;
+}stAutosXMarca;
 
 
 

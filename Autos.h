@@ -1,6 +1,8 @@
 #ifndef AUTOS_H_INCLUDED
 #define AUTOS_H_INCLUDED
 
+char archivoAutos[] = "ArchiAutos" ;
+
 typedef struct
 {
     int marcasDeAuto;
