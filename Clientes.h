@@ -12,10 +12,9 @@ typedef struct
 
 }stClientes;
 
-void cargarClienteEnLista(stClientes nuevoCliente);
 void crearNuevoUsuario();
-stClientes buscarStClientePorDNI(int DNI);
-
+void mostrarInformacionDelCliente(int DNI);
+void mostrarCliente(stClientes cliente);
 
 
 #endif // CLIENTES_H_INCLUDED

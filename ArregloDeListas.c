@@ -5,6 +5,8 @@
 
 #include "ArregloDeListas.h"
 
+const char archivoAutos[] = "ArchiAutos" ;
+
 stAutosXMarca buscarAutosXMarca(int marcaActual, stAutosXMarca arregloXMarca[], int cantidad)
 {
     stAutosXMarca autosXMarcaActual ;

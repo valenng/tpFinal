@@ -3,9 +3,13 @@
 #include <string.h>
 #include <locale.h>
 
+#define ARCHIVO_AUTO "ArchiAutos.bin" // const nombre del archivo
+
 #include "Autos.h" ///-> LIB. AUTOS C/PROTOTIPADOS Y ESTRUCTURA
 #include "Prots-LISTAS-autos.h"
 #include "ArregloDeListas.h"
+
+
 
 char maxValorMatricula[3] = {25,25,99} ;
 char ultimaMatricula[3] = {0,0,0} ;
@@ -218,7 +222,7 @@ void mostrarUnAuto(stAuto autito)
 
 void cargarArchivoDeAutos()
 {
-    FILE *archivo = fopen(archivoAutos, "ab") ;
+    FILE *archivo = fopen(ARCHIVO_AUTO, "ab") ;
     if(archivo != NULL)
     {
         stAuto autito = cargarUnAuto() ;
@@ -233,7 +237,7 @@ void cargarArchivoDeAutos()
 nodo* pasarArchivoALista(nodo* listaAutos)
 {
     stAuto autito;
-    FILE *archivo = fopen(archivoAutos, "rb") ;
+    FILE *archivo = fopen(ARCHIVO_AUTO, "rb") ;
     if(archivo != NULL)
     {
         while(fread(&autito, sizeof(stAuto), 1, archivo) > 0)
@@ -251,7 +255,7 @@ nodo* pasarArchivoALista(nodo* listaAutos)
 
 void pasarListaAArchivoWB(nodo* listaAutos)
 {
-    FILE* archivo = fopen(archivoAutos, "wb") ;
+    FILE* archivo = fopen(ARCHIVO_AUTO, "wb") ;
     if(archivo != NULL)
     {
         while(listaAutos != NULL)
@@ -307,7 +311,7 @@ void ingresarMatricula(char matricula[5])
 void borrarUnAutoDelArchivo()
 {
     char matricula[5] ;
-    FILE* archivo = fopen(archivoAutos, "rb") ;
+    FILE* archivo = fopen(ARCHIVO_AUTO, "rb") ;
     if(archivo != NULL)
     {
         nodo* aux = pasarArchivoALista(archivo) ;

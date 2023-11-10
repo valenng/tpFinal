@@ -41,22 +41,23 @@ void crearNuevoUsuario()
         nodoArbol* nodoNuevoCliente = crearNodoArbolCliente(nuevoCliente);
         arbolCliente = insertarEnArbolNodoCliente(arbolCliente,nodoNuevoCliente );
         cargarArbolDeClientesEnArchivo(arbolCliente);
+        system("cls");
         printf("\n\n    USUARIO CREADO CON EXITO !!!");
-        ///sleep(5);
+        sleep(5);
         menu();
 
     }
     else // si el DNI ya existe NO se carga el nuevo cliente;
     {
 
-        printf("El dni ya existe ");
-        ///sleep(5);
+        printf("\n\n    EL DNI YA EXISTE !!!");
+        sleep(5);
         menu();
 
 
     }
 
-
+    menu();
 
 }
 
@@ -148,28 +149,7 @@ void mostrarCliente(stClientes cliente)
 
 }
 
-nodoArbol* modificarCliente(int DNI, nodoArbol* arbol)
-{
-    system("cls");
 
-    stClientes cliente;
-    nodoArbol* nodoCliente = busquedaDeClienteEnArbol(arbol, DNI);
-    mostrarCliente(nodoCliente->clientes);
-    printf("\n\n        Modificar datos: \n\n    Nombre: ");
-    scanf("%s", &cliente.nombre );
-    printf("\n    Apellido: ");
-    scanf("%i", &cliente.apellido);
-    fflush(stdin);
-    printf("\nTiene licencia de conducir? \n\n1) SI\n\n2)  NO\n\nIngresar la opcion : ");
-    scanf("%i", &cliente.licencia); /// falta validar 1 o 2
-
-    arbol = eliminarNodoarbol(arbol, DNI);
-    nodoArbol* rta = insertarEnArbolNodoCliente(arbol, cliente);
-
-
-   return rta;
-
-}
 
 
 

@@ -175,3 +175,51 @@ nodo2Clientes * listaActual = listaClientes;
 }
 
 
+nodo2Clientes * agregarAlFinalLista2(nodo2Clientes * lista, nodo2Clientes * nuevoNodo)
+{
+    /*
+    if(lista==NULL)
+    {
+        lista=nuevoNodo;
+    }
+    else
+    {
+        nodo2Clientes * ultimo = buscarUltimoR(lista);
+        ultimo->siguiente = nuevoNodo;
+        nuevoNodo->anterior = ultimo;
+
+    }
+    */
+    return lista;
+}
+
+
+stClientes * verPrimeroDeLista2 (nodo2Clientes * lista)
+{
+/*
+    stClientes * rta;
+
+    if(lista!=NULL){
+       rta=lista->cliente;
+
+
+    }
+    return rta;
+*/
+}
+
+nodo2Clientes * borrarPrimeroNodoClienteLista2 (nodo2Clientes * lista)
+{
+    /*
+    nodo2Clientes * aux = lista;;
+    if (lista)
+    {
+        lista=lista->ste;
+        if(lista)
+            lista->ante=NULL;
+        free(aux);
+    }
+    return lista;
+    */
+}
+

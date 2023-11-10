@@ -73,24 +73,26 @@ void usuario()
 
         /// verificar usuario
         nodoArbol* arbol = descargaDeClientesDeArchivoEnArbol();
+        mostrarArbolInOrden(arbol);
         nodoCliente = busquedaDeClienteEnArbol(arbol, dni);
+
 
         if(nodoCliente != NULL)
         {
 
             system("cls");
             printf("\n\n        Inicio de sesion");
-            ///sleep(3);
+            sleep(3);
             usuarioSesionIniciada(dni);
 
         }
         else
         {
 
-            ///sleep(3);
+            sleep(3);
             system("cls");
             printf("el usuario no existe");
-            ///sleep(3);
+            sleep(3);
 
             usuario();
 
@@ -175,9 +177,9 @@ void usuarioSesionIniciada(int DNI)
 
             system("cls");
             printf("\n\n        Sesion cerrada. ¡Hasta luego!");
-            ///sleep(3);
+            sleep(3);
             menu();
-            /// falta funcion
+
             break;
         default:
             break;
@@ -255,7 +257,7 @@ void menuCliente()
     nodoArbol* arbol = descargaDeClientesDeArchivoEnArbol();
     system("cls");
     int opcion, DNI;
-    printf("\n\n    1)Info cliente\n    2)Lista de clientes\n    3)Modificar cliente\n    4)Eliminiar cliente\n    5)bloquear\n    6)Volver\n\n    ingresar opcion:");
+    printf("\n\n    1)Info cliente\n    2)Lista de clientes\n    3)Modificar cliente\n    4)Eliminiar cliente\n    5)bloquear\n    6)Volver\n\n    ingresar opcion:    ");
     scanf("%i", &opcion);
 
     switch(opcion)
@@ -275,7 +277,7 @@ void menuCliente()
         }else{
             system("cls");
             printf("\n\n    El DNI no existe");
-            ///sleep(3);
+            sleep(3);
         }
 
         menuCliente();
@@ -302,11 +304,11 @@ void menuCliente()
             arbol = modificarCliente(DNI, arbol);
             printf("\n\n    Modificado con exito");
             cargarArbolDeClientesEnArchivo(arbol);
-            ///sleep(3);
+            sleep(3);
         }else{
         system("cls");
         printf("\n\n    El DNI no existe");
-        ///sleep(3);
+        sleep(3);
 
         }
 

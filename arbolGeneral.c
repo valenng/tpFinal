@@ -56,28 +56,41 @@ void mostrarArbolInOrden(nodoArbol* nodoCliente)/// inorden
     }
 }
 
-nodoArbol* busquedaDeClienteEnArbol(nodoArbol* arbol, int DNI){
+nodoArbol* busquedaDeClienteEnArbol(nodoArbol* arbol, int DNI)
+{
 
 
-nodoArbol * rta = NULL;
-if(arbol->clientes.DNI == DNI){
-    rta = arbol;
+    nodoArbol * rta = NULL;
 
-}else{
+    if(arbol!=NULL)
+    {
 
-if(DNI>arbol->clientes.DNI){
+        if(DNI == arbol->clientes.DNI)
+        {
+            rta = arbol;
 
-    rta = busquedaDeClienteEnArbol(arbol->derecha, DNI);
+        }
+        else
+        {
 
-}else{
+            if(DNI>arbol->clientes.DNI)
+            {
 
-    rta = busquedaDeClienteEnArbol(arbol->izquierda, DNI);
+                rta = busquedaDeClienteEnArbol(arbol->derecha, DNI);
 
-}
+            }
+            else
+            {
 
-}
+                rta = busquedaDeClienteEnArbol(arbol->izquierda, DNI);
 
-return rta;
+            }
+
+        }
+
+    }
+
+    return rta;
 
 }
 
@@ -111,20 +124,26 @@ nodoArbol * descargaDeClientesDeArchivoEnArbol() /// descargar los datos del arc
 }
 
 
-void cargarArbolDeClientesEnArchivo(nodoArbol* arbol) {
+void cargarArbolDeClientesEnArchivo(nodoArbol* arbol)
+{
     FILE* archivo = fopen(CLIENTE_ARCHIVO, "wb");
 
-    if (archivo != NULL) {
+    if (archivo != NULL)
+    {
         guardarArbolEnArchivoRecursivo(archivo, arbol);
         fclose(archivo);
-    } else {
+    }
+    else
+    {
         printf("No se pudo abrir el archivo.\n");
     }
 }
 
 
-void guardarArbolEnArchivoRecursivo(FILE* archivo, nodoArbol* actual) { /// guardan en el archivo de forma recursiva
-    if (actual != NULL) {
+void guardarArbolEnArchivoRecursivo(FILE* archivo, nodoArbol* actual)   /// guardan en el archivo de forma recursiva
+{
+    if (actual != NULL)
+    {
         fwrite(&(actual->clientes), sizeof(stClientes), 1, archivo);
 
 
@@ -138,31 +157,43 @@ void guardarArbolEnArchivoRecursivo(FILE* archivo, nodoArbol* actual) { /// guar
 /// ---------------
 
 // Función para encontrar el nodo con el valor mínimo en un árbol
-nodoArbol* encontrarMinimo(nodoArbol* nodo) {
-    while (nodo->izquierda != NULL) {
+nodoArbol* encontrarMinimo(nodoArbol* nodo)
+{
+    while (nodo->izquierda != NULL)
+    {
         nodo = nodo->izquierda;
     }
     return nodo;
 }
 
 // Función para eliminar un nodo de un árbol
-nodoArbol* eliminarNodoarbol(nodoArbol* raiz, int dniCliente) {
-    if (raiz == NULL) {
+nodoArbol* eliminarNodoarbol(nodoArbol* raiz, int dniCliente)
+{
+    if (raiz == NULL)
+    {
         return raiz;
     }
 
     // Buscar el nodo que contiene el cliente a eliminar
-    if (dniCliente < raiz->clientes.DNI) {
+    if (dniCliente < raiz->clientes.DNI)
+    {
         raiz->izquierda = eliminarNodoarbol(raiz->izquierda, dniCliente);
-    } else if (dniCliente > raiz->clientes.DNI) {
+    }
+    else if (dniCliente > raiz->clientes.DNI)
+    {
         raiz->derecha = eliminarNodoarbol(raiz->derecha, dniCliente);
-    } else {
+    }
+    else
+    {
         // Nodo con un solo hijo o sin hijos
-        if (raiz->izquierda == NULL) {
+        if (raiz->izquierda == NULL)
+        {
             nodoArbol* temp = raiz->derecha;
             free(raiz);
             return temp;
-        } else if (raiz->derecha == NULL) {
+        }
+        else if (raiz->derecha == NULL)
+        {
             nodoArbol* temp = raiz->izquierda;
             free(raiz);
             return temp;
@@ -182,3 +213,29 @@ nodoArbol* eliminarNodoarbol(nodoArbol* raiz, int dniCliente) {
 }
 
 
+nodoArbol* modificarCliente(int DNI, nodoArbol* arbol)
+{
+    system("cls");
+
+    stClientes cliente;
+    nodoArbol* nodoCliente = busquedaDeClienteEnArbol(arbol, DNI);
+    mostrarCliente(nodoCliente->clientes);
+    printf("\n\n        Modificar datos: \n\n    Nombre: ");
+    scanf("%s", &cliente.nombre );
+    printf("\n    Apellido: ");
+    scanf("%i", &cliente.apellido);
+    fflush(stdin);
+    printf("\nTiene licencia de conducir? \n\n1) SI\n\n2)  NO\n\nIngresar la opcion : ");
+    scanf("%i", &cliente.licencia); /// falta validar 1 o 2
+
+    cliente.DNI = DNI;
+
+    nodoArbol* clienteModificado = crearNodoArbolCliente(cliente);
+
+    arbol = eliminarNodoarbol(arbol, DNI);
+    nodoArbol* rta = insertarEnArbolNodoCliente(arbol, clienteModificado);
+
+
+    return rta;
+
+}
