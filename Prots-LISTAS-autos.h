@@ -17,7 +17,7 @@ nodo* cargarListaDeAutos(nodo* listaAutos) ;
 
 nodo* agregarEnOrden(nodo*, nodo*) ;
 void escribir(nodo*) ;
-void recorrerYMostrar(nodo*) ;
+
 nodo* eliminarNodo(nodo*, char[]) ;
 
 

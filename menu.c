@@ -136,12 +136,10 @@ void usuarioSesionIniciada(int DNI)
 
         printf("Menu de Alquiler de Autos:\n\n");
         printf("1) Ver catalogo de autos disponibles\n");
-        printf("2) ver los autos mas populares\n");
-        printf("3) Alquilar un auto\n");
-        printf("4) Devolver un auto alquilado\n");
-        printf("5) Ver historial de alquileres\n");
-        printf("6) Información personal\n");
-        printf("7) Cerrar sesion\n");
+        printf("2) Alquilar un auto\n");
+        printf("3) Devolver un auto alquilado\n");
+        printf("4) Información personal\n");
+        printf("5) Cerrar sesion\n");
         printf("Ingrese la opción deseada: ");
         scanf("%d", &opcion);
 
@@ -157,12 +155,6 @@ void usuarioSesionIniciada(int DNI)
             /// falta funcion
             break;
         case 4:
-            /// falta funcion
-            break;
-        case 5:
-            /// falta funcion
-            break;
-        case 6:
             system("cls");
             printf("\n\n        Información personal");
             mostrarInformacionDelCliente(DNI);
@@ -170,17 +162,15 @@ void usuarioSesionIniciada(int DNI)
             esperarTecla();
             usuarioSesionIniciada(DNI);
 
-
-        /// falta funcion
-
-        case 7:
-
+            break;
+        case 5:
             system("cls");
             printf("\n\n        Sesion cerrada. ¡Hasta luego!");
             sleep(3);
             menu();
 
             break;
+
         default:
             break;
         }
@@ -244,10 +234,54 @@ void menuAutos()
     system("cls");
     int opcion;
 
-    printf("\n| [ 1 ] AGREGAR AUTOS\n") ; ///
+    printf("\nMenu autos\n\n\n") ; ///
 
-    printf("1)Lista de autos\n  2)Busqueda De Auto\n    3)Autos disponibles\n   4)Agregar autos\n   5)Modificar auto\n    6)    Eliminar auto\n\n   ingresar opcion: ");
+    printf("    1)Lista de autos\n    2)Busqueda De Auto\n    3)Autos disponibles\n    4)Agregar autos\n    5)Modificar auto\n    6)Eliminar auto\n    7)Volver al menu\n\n   ingresar opcion: ");
     scanf("%i", &opcion);
+
+    switch(opcion)
+    {
+
+    case 1:
+            /// falta funcion
+
+        break;
+
+    case 2:
+            /// falta funcion
+
+        break;
+
+    case 3:
+            /// falta funcion
+
+        break;
+    case 4:
+            /// falta funcion
+
+        break;
+    case 5:
+            /// falta funcion
+
+        break;
+
+    case 6:
+            /// falta funcion
+
+        break;
+    case 7:
+
+        menu();
+
+        break;
+
+    default:
+
+        break;
+
+
+    }
+
 
 
 }
@@ -257,7 +291,7 @@ void menuCliente()
     nodoArbol* arbol = descargaDeClientesDeArchivoEnArbol();
     system("cls");
     int opcion, DNI;
-    printf("\n\n    1)Info cliente\n    2)Lista de clientes\n    3)Modificar cliente\n    4)Eliminiar cliente\n    5)bloquear\n    6)Volver\n\n    ingresar opcion:    ");
+    printf("\n\n    1)Info cliente\n    2)Lista de clientes\n    3)Modificar cliente\n    4)Eliminiar cliente\n    5)Volver\n\n    ingresar opcion:    ");
     scanf("%i", &opcion);
 
     switch(opcion)
@@ -269,12 +303,15 @@ void menuCliente()
         printf("\n\nIngresar el DNI buscado:  ");
         scanf("%i", &DNI);
         fflush(stdin);
-        if(busquedaDeClienteEnArbol(arbol, DNI)== NULL){
+        if(busquedaDeClienteEnArbol(arbol, DNI)== NULL)
+        {
 
             mostrarInformacionDelCliente(DNI);
             esperarTecla();
 
-        }else{
+        }
+        else
+        {
             system("cls");
             printf("\n\n    El DNI no existe");
             sleep(3);
@@ -299,16 +336,19 @@ void menuCliente()
         system("cls");
         printf("\n\n    Ingresar el cliente que queres modificar: \n\n  Ingresar opcion:  ");
         scanf("%i", &DNI);
-        if(busquedaDeClienteEnArbol(arbol, DNI) != NULL){
+        if(busquedaDeClienteEnArbol(arbol, DNI) != NULL)
+        {
 
             arbol = modificarCliente(DNI, arbol);
             printf("\n\n    Modificado con exito");
             cargarArbolDeClientesEnArchivo(arbol);
             sleep(3);
-        }else{
-        system("cls");
-        printf("\n\n    El DNI no existe");
-        sleep(3);
+        }
+        else
+        {
+            system("cls");
+            printf("\n\n    El DNI no existe");
+            sleep(3);
 
         }
 
@@ -321,7 +361,8 @@ void menuCliente()
         system("cls");
         printf("\n\nEliminar cliente: \n\n      Ingresar el DNI q quieres eliminar\n\n      Ingresar opcion:");
         scanf("%i", &DNI);
-        if(busquedaDeClienteEnArbol(arbol, DNI) != NULL){
+        if(busquedaDeClienteEnArbol(arbol, DNI) != NULL)
+        {
             arbol = eliminarNodoarbol(arbol, DNI);
             cargarArbolDeClientesEnArchivo(arbol);
             esperarTecla();
@@ -331,10 +372,6 @@ void menuCliente()
         menuCliente();
         break;
     case 5:
-        /// falta funcion
-        break;
-    case 6:
-        /// falta funcion
         menu();
         break;
 

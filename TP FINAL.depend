@@ -149,48 +149,49 @@
 	"Clientes.h"
 	"menu.h"
 
-1698878157 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\arbolgeneral.c
+1700614456 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\arbolgeneral.c
 	<stdlib.h>
+	<stdio.h>
 	<string.h>
 	<locale.h>
-	"Clientes.h"
-	"menu.h"
+	"Autos.h"
 	"arbolGeneral.h"
 
-1698879486 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\clientes.h
+1700616635 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\clientes.h
 
-1698878157 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\menu.h
+1700614456 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\menu.h
 
-1698878157 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\arbolgeneral.h
+1700614456 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\arbolgeneral.h
 	"Autos.h"
 	"Clientes.h"
 	"menu.h"
 
-1698878157 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\autos.h
+1700614456 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\autos.h
 
-1698878157 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\autos.c
+1700614456 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"Autos.h"
 	"Prots-LISTAS-autos.h"
+	"ArregloDeListas.h"
 
-1698878157 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\prots-listas-autos.h
+1700683209 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\prots-listas-autos.h
 	"Autos.h"
 
-1698884261 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\clientes.c
+1700614456 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"Clientes.h"
-	"listas2Clientes.h"
+	"arbolGeneral.h"
 
-1698878157 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\listas2clientes.h
+1700614456 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\listas2clientes.h
 	"Clientes.h"
 
-1698878157 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\func-listas-autos.c
+1700614456 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\func-listas-autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -198,21 +199,22 @@
 	"Prots-LISTAS-autos.h"
 	"Autos.h"
 
-1698884261 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\listas2clientes.c
+1700614456 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\listas2clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"listas2Clientes.h"
 
-1698878812 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\main.c
+1700614456 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"menu.h"
+	"Autos.h"
 
-1698884617 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\menu.c
+1700616635 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -220,6 +222,8 @@
 	"Autos.h"
 	"Clientes.h"
 	"menu.h"
+	"listas2Clientes.h"
+	"arbolGeneral.h"
 
 1698924824 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\alquileres de autos programa tpfinal\arbolgeneral.c
 	<stdlib.h>
@@ -400,4 +404,14 @@
 
 1699620259 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\filaclientes.h
 	"listas2Clientes.h"
+
+1700614456 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\arreglodelistas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"ArregloDeListas.h"
+
+1700614456 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\arreglodelistas.h
+	"Prots-LISTAS-autos.h"
 
