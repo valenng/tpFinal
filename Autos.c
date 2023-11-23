@@ -4,6 +4,8 @@
 #include <locale.h>
 #include <time.h>
 
+#include "arbolGeneral.h"
+
 ///#include "Autos.h" ///-> LIB. AUTOS C/PROTOTIPADOS Y ESTRUCTURA
 ///#include "Prots-LISTAS-autos.h"
 #include "ArregloDeListas.h"
@@ -298,9 +300,11 @@ int calcularTarifa(char matriculaSeleccionada[])
 //-----------------------------------------------------------------------
 //-----------------------------------------------------------------------
 
-void alquilarUnAuto()
+void alquilarUnAuto(int DNI)
 {
     stAuto autito;
+    nodoArbol* arbol;
+    nodoArbol* nodoCliente;
     FILE* archivo = fopen(ARCHIVO_AUTO, "r+b") ;
     if(archivo != NULL)
     {
@@ -313,11 +317,7 @@ void alquilarUnAuto()
         {
             if(strcmpi(autito.matricula, matriculaSeleccionada) == 0) //SON IGUALES
             {
-                int dniCliente = 0;
-                printf("\n- Ingrese su DNI para confirmar el alquiler: ") ;
-                scanf("%i", &dniCliente) ;
-
-                autito.dniInquilino = dniCliente ;
+                autito.dniInquilino = DNI ;
                 autito.disponibilidad = 0; //PASA A NO ESTAR DISPONIBLE
                 fseek(archivo, (-1)*sizeof(stAuto), SEEK_CUR);
                 fwrite(&autito, sizeof(stAuto), 1, archivo);

@@ -140,7 +140,7 @@ void usuarioSesionIniciada(int DNI)
             case 2:
                 printf("\n\t\t|AUTOS DISPONIBLES PARA ALQUILAR|") ;
                 funcMenuMostrarDisponibles() ;
-                alquilarUnAuto() ;
+                alquilarUnAuto(DNI) ;
                 printf("\n") ;
                 system("pause") ;
                 system("cls") ;
