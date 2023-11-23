@@ -21,7 +21,7 @@ void apilarPila(Pila* p, stAuto autito)
 
 
 }
-
+/*
 void mostrarPila(Pila * p)
 {
 
@@ -30,7 +30,7 @@ void mostrarPila(Pila * p)
     printf("    |> base ");
 
 }
-
+*/
 
 void desapilarPila(Pila* p)
 {

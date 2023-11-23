@@ -22,8 +22,15 @@ void mostrarMarcasOModelos(char[][20]) ;
 void mostrarCombustiblesOColores(char[][20]) ;
 
 void asignarMatricula(char[]) ;
+int elegirMarca() ;
 stAuto cargarUnAuto(int) ;
+void mostrarUnAuto(stAuto) ;
 void cargarArchivoDeAutos(int) ;
-stAuto cargaGenArchivoAutos()  ;
+
+void ingresarMatriculaYCalcularTarifa() ;
+int calcularTarifa(char []) ;
+void alquilarUnAuto() ;
+void modificarEstado() ;
+void devolverAuto() ;
 
 #endif // AUTOS_H_INCLUDED

@@ -118,34 +118,4 @@ void mostrarDisponibles(nodo* listaAMostrar)
         listaAMostrar = listaAMostrar->siguiente;
     }
 }
-/*
-nodo* eliminarNodo(nodo* lista, char matricula[])
-{
-    nodo* aux;
-    nodo* anterior ;
-    if((lista != NULL) && (strcmpi(matricula, lista->autito.matricula) == 0))
-    {
-        aux = lista;
-        lista = lista->siguiente ;
-        free(aux) ;
-    }
-    else
-    {
-        aux = lista ;
-        while((aux != NULL) && (strcmpi(matricula, aux->autito.matricula) != 0))
-        {
-            anterior = aux ;
-            aux = aux->siguiente ;
-        }
-        if(aux != NULL)
-        {
-            anterior->siguiente = aux->siguiente;
-            free(aux) ;
-        }
-    }
-    return lista;
-}
-
-*/
-
 

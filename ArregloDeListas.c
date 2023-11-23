@@ -114,9 +114,12 @@ void funcMenuMostrarDisponibles()
 
 
 
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
 
+
+
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+/*
 void pasarArregloAArchivo(stAutosXMarca arrDeListas[], int validos)
 {
     FILE* archivo = fopen(ARCHIVO_ARREGLO_AUTOS, "wb");
@@ -138,4 +141,4 @@ void pasarArregloAArchivo(stAutosXMarca arrDeListas[], int validos)
         fclose(archivo);
     }
 }
-
+*/

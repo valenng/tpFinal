@@ -17,9 +17,8 @@ nodo* agregarAlFinal(nodo*, nodo*);
 nodo* pasarArchivoALista() ;
 nodo* cargaGeneralAuto(int) ;
 
-void mostrarNodo(nodo*) ;
-
-nodo* eliminarNodo(nodo*, char[]) ;
+void mostrarLista(nodo*) ;
+void mostrarDisponibles(nodo*) ;
 
 
 

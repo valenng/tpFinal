@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <locale.h>
+#include <time.h>
 
 ///#include "Autos.h" ///-> LIB. AUTOS C/PROTOTIPADOS Y ESTRUCTURA
 ///#include "Prots-LISTAS-autos.h"
@@ -285,18 +286,56 @@ int calcularTarifa(char matriculaSeleccionada[])
                 break;
             }
         }
+        if(strcmpi(autito.matricula, matriculaSeleccionada) != 0)
+        {
+            printf("\n\t\t# Matrícula NO encontrada.\n") ;
+            system("pause") ;
+        }
         fclose(archivo) ;
     }
     return tarifa;
 }
-
 //-----------------------------------------------------------------------
 //-----------------------------------------------------------------------
 
 void alquilarUnAuto()
 {
-    modificarEstado() ;
+    stAuto autito;
+    FILE* archivo = fopen(ARCHIVO_AUTO, "r+b") ;
+    if(archivo != NULL)
+    {
+        char matriculaSeleccionada[5] ;
+        printf("\n- Ingrese la matrícula del auto para modificar su estado: ") ;
+        fflush(stdin) ;
+        gets(matriculaSeleccionada) ;
+
+        while(fread(&autito, sizeof(stAuto), 1, archivo) > 0)
+        {
+            if(strcmpi(autito.matricula, matriculaSeleccionada) == 0) //SON IGUALES
+            {
+                int dniCliente = 0;
+                printf("\n- Ingrese su DNI para confirmar el alquiler: ") ;
+                scanf("%i", &dniCliente) ;
+
+                autito.dniInquilino = dniCliente ;
+                autito.disponibilidad = 0; //PASA A NO ESTAR DISPONIBLE
+                fseek(archivo, (-1)*sizeof(stAuto), SEEK_CUR);
+                fwrite(&autito, sizeof(stAuto), 1, archivo);
+
+                printf("\n- Excelente! DNI cargado a la estructura del auto.\n") ;
+                break;
+            }
+        }
+        if(strcmpi(autito.matricula, matriculaSeleccionada) != 0)
+        {
+            printf("\n\t\t# Matrícula NO encontrada.\n") ;
+            system("pause") ;
+        }
+        rewind(archivo) ; ///Reposicionar el indicador de posición al principio
+        fclose(archivo) ;
+    }
 }
+
 
 void modificarEstado()
 {

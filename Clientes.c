@@ -16,16 +16,22 @@ void crearNuevoUsuario()
 
     stClientes nuevoCliente;
     fflush(stdin);
-    printf("  CREAR USUARIO \n\nIngrear el nombre del usuario:  ");
+    printf("\n\t\t|CREAR NUEVO USUARIO|") ;
+    printf("\n\t\t---------------------");
+    printf("\n- Ingresar el nombre del usuario:  ");
     scanf("%s", &nuevoCliente.nombre);
     fflush(stdin);
-    printf("\nIngresar el apellido del cliente:  ");
+    printf("\n- Ingresar el apellido del cliente:  ");
     scanf("%s", &nuevoCliente.apellido);
     fflush(stdin);
-    printf("\nTiene licencia de conducir? \n\n1) SI\n\n2)  NO\n\nIngresar la opcion : ");
+    printf("\n- ¿Tiene licencia de conducir?");
+    printf("\n\t[ 1 ] SI") ;
+    printf("\n\t[ 2 ] NO") ;
+
+    printf("\n|OPCIÓN ELEGIDA|: ") ;
     scanf("%i", &nuevoCliente.licencia); /// falta validar 1 o 2
 
-    printf("\nIngresar el DNI de %s %s\n\nIngresar DNI:  ", nuevoCliente.nombre, nuevoCliente.apellido);
+    printf("\n- Ingresar el DNI de %s %s:  ", nuevoCliente.nombre, nuevoCliente.apellido);
     scanf("%i", &nuevoCliente.DNI);
 
     nuevoCliente.estadoDeAlquiler = 0;
@@ -45,18 +51,14 @@ void crearNuevoUsuario()
         cargarArbolDeClientesEnArchivo(arbolCliente);
         system("cls");
         printf("\n\n    USUARIO CREADO CON EXITO !!!");
-        sleep(5);
+        ///sleep(5);
         menu();
-
     }
     else // si el DNI ya existe NO se carga el nuevo cliente;
     {
-
         printf("\n\n    EL DNI YA EXISTE !!!");
-        sleep(5);
+        ///sleep(5);
         menu();
-
-
     }
 
     menu();
@@ -134,21 +136,20 @@ stClientes buscarStClientePorDNI(int DNI)
 
 void mostrarCliente(stClientes cliente)
 {
-
-    printf("\n\nNombre: %s\nApellido: %s\nDNI: %i\nLicencia: ",cliente.nombre,cliente.apellido, cliente.DNI);
+    printf("\n---------------------------------------") ;
+    printf("\n|NOMBRE|: %s", cliente.nombre);
+    printf("\n|APELLIDO|: %s", cliente.apellido);
+    printf("\n|DNI|: %i", cliente.DNI);
+    printf("\n|LICENCIA|: ") ;
     if(cliente.licencia == 1)
     {
-
         printf("SI");
-
     }
     else
     {
-
         printf("NO");
-
     }
-
+    printf("\n---------------------------------------") ;
 }
 
 

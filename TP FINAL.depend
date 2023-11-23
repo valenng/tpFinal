@@ -1,17 +1,18 @@
 # depslib dependency file v1.0
-1700711339 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.c
+1700718346 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
+	<time.h>
 	"ArregloDeListas.h"
 
-1700619671 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.h
+1700719916 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.h
 
 1700619671 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\prots-listas-autos.h
 	"Autos.h"
 
-1700711647 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.c
+1700719461 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -38,7 +39,7 @@
 	<locale.h>
 	"listas2Clientes.h"
 
-1700711647 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\main.c
+1700715021 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -48,7 +49,7 @@
 
 1700711647 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.h
 
-1700711861 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.c
+1700719616 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -372,14 +373,14 @@
 	"Prots-LISTAS-autos.h"
 	"ArregloDeListas.h"
 
-1700710614 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arreglodelistas.c
+1700719616 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arreglodelistas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"ArregloDeListas.h"
 
-1700621491 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arreglodelistas.h
+1700719616 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arreglodelistas.h
 	"Prots-LISTAS-autos.h"
 
 1699569385 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\arreglodelistas.c
@@ -433,7 +434,7 @@
 1700699560 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\pila.h
 	"Prots-LISTAS-autos.h"
 
-1700711647 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\pila.c
+1700714961 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\pila.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -444,4 +445,11 @@
 	"Prots-LISTAS-autos.h"
 
 1700711647 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\filas.h
+
+1700711647 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\filas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"filas.h"
 
