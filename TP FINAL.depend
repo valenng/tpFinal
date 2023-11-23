@@ -1,18 +1,19 @@
 # depslib dependency file v1.0
-1700718346 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.c
+1700728456 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	<time.h>
+	"arbolGeneral.h"
 	"ArregloDeListas.h"
 
-1700719916 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.h
+1700720210 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.h
 
-1700619671 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\prots-listas-autos.h
+1700720026 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\prots-listas-autos.h
 	"Autos.h"
 
-1700719461 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.c
+1700726957 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -25,7 +26,7 @@
 1700711647 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\listas2clientes.h
 	"Clientes.h"
 
-1700706693 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\func-listas-autos.c
+1700719979 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\func-listas-autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -49,7 +50,7 @@
 
 1700711647 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.h
 
-1700719616 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.c
+1700727801 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -61,7 +62,7 @@
 	"arbolGeneral.h"
 	"filas.h"
 
-1700711647 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arbolgeneral.c
+1700726662 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arbolgeneral.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
@@ -380,7 +381,7 @@
 	<locale.h>
 	"ArregloDeListas.h"
 
-1700719616 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arreglodelistas.h
+1700720105 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arreglodelistas.h
 	"Prots-LISTAS-autos.h"
 
 1699569385 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\arreglodelistas.c

@@ -24,12 +24,17 @@ void crearNuevoUsuario()
     printf("\n- Ingresar el apellido del cliente:  ");
     scanf("%s", &nuevoCliente.apellido);
     fflush(stdin);
-    printf("\n- ¿Tiene licencia de conducir?");
-    printf("\n\t[ 1 ] SI") ;
-    printf("\n\t[ 2 ] NO") ;
+    do
+    {
+        printf("\n- ¿Tiene licencia de conducir?");
+        printf("\n\t[ 1 ] SI") ;
+        printf("\n\t[ 2 ] NO") ;
 
-    printf("\n|OPCIÓN ELEGIDA|: ") ;
-    scanf("%i", &nuevoCliente.licencia); /// falta validar 1 o 2
+        printf("\n|OPCIÓN ELEGIDA|: ") ;
+        scanf("%i", &nuevoCliente.licencia);
+    }
+    while(nuevoCliente.licencia < 1 || nuevoCliente.licencia > 2) ;
+
 
     printf("\n- Ingresar el DNI de %s %s:  ", nuevoCliente.nombre, nuevoCliente.apellido);
     scanf("%i", &nuevoCliente.DNI);

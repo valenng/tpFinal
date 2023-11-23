@@ -219,13 +219,20 @@ nodoArbol* modificarCliente(int DNI, nodoArbol* arbol)
 
     stClientes cliente;
     nodoArbol* nodoCliente = busquedaDeClienteEnArbol(arbol, DNI);
+    printf("\n\t|CLIENTE A MODIFICAR|") ;
     mostrarCliente(nodoCliente->clientes);
-    printf("\n\n        Modificar datos: \n\n    Nombre: ");
+
+    printf("\n\n\t|MODIFICAR DATOS|");
+    printf("\n\t-----------------") ;
+    printf("\n - NOMBRE: ") ;
     scanf("%s", &cliente.nombre );
-    printf("\n    Apellido: ");
-    scanf("%i", &cliente.apellido);
+    printf("\n - APELLIDO: ");
+    scanf("%s", &cliente.apellido);
     fflush(stdin);
-    printf("\nTiene licencia de conducir? \n\n1) SI\n\n2)  NO\n\nIngresar la opcion : ");
+    printf("\n - ¿TIENE LICENCIA DE CONDUCIR?");
+    printf("\n\t [ 1 ]  SI ") ;
+    printf("\n\t [ 2 ]  NO ") ;
+    printf("\n\n|OPCIÓN ELEGIDA|: ") ;
     scanf("%i", &cliente.licencia); /// falta validar 1 o 2
 
     cliente.DNI = DNI;
@@ -235,7 +242,5 @@ nodoArbol* modificarCliente(int DNI, nodoArbol* arbol)
     arbol = eliminarNodoarbol(arbol, DNI);
     nodoArbol* rta = insertarEnArbolNodoCliente(arbol, clienteModificado);
 
-
     return rta;
-
 }

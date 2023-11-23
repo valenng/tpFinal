@@ -120,11 +120,11 @@ void usuarioSesionIniciada(int DNI)
         printf("\n\t\t|MENÚ DE ALQUILER DE AUTOS|") ;
         printf("\n\t\t---------------------------\n") ;
 
-        printf("\n[ 1 ] Ver catálogo de autos disponibles..") ;
-        printf("\n[ 2 ] Alquilar un auto..") ;
-        printf("\n[ 3 ] Devolver un auto alquilado..") ;
-        printf("\n[ 4 ] Información personal..") ;
-        printf("\n[ 5 ] Cerrar sesión..") ;
+        printf("\n\t[ 1 ] Ver catálogo de autos disponibles..") ;
+        printf("\n\t[ 2 ] Alquilar un auto..") ;
+        printf("\n\t[ 3 ] Devolver un auto alquilado..") ;
+        printf("\n\t[ 4 ] Información personal..") ;
+        printf("\n\t[ 5 ] Cerrar sesión..") ;
 
         printf("\n\n|OPCIÓN ELEGIDA|: ") ;
         scanf("%i", &opcion);
@@ -146,7 +146,7 @@ void usuarioSesionIniciada(int DNI)
                 system("cls") ;
             break;
             case 3:
-                devolverAuto() ;
+                devolverAuto(DNI) ;
                 printf("\n") ;
                 system("pause") ;
                 system("cls") ;
@@ -154,10 +154,11 @@ void usuarioSesionIniciada(int DNI)
             case 4:
                 system("cls");
                 printf("\n\t|INFORMACIÓN PERSONAL|") ;
-                printf("\n\t---------------------") ;
+                printf("\n\t----------------------") ;
                 mostrarInformacionDelCliente(DNI);
                 fflush(stdin);
-                esperarTecla();
+                printf("\n") ;
+                system("pause") ;
                 usuarioSesionIniciada(DNI);
             break;
             case 5:
@@ -263,6 +264,7 @@ void menuAutos()
             break;
 
         case 3: ///BÚSQUEDA DE UN AUTO
+            funcMenuMostrarDisponibles() ;
             ingresarMatriculaYCalcularTarifa() ;
             printf("\n") ;
             system("pause") ;
@@ -319,19 +321,21 @@ void menuCliente()
 
     case 1:
 
-        system("cls");
+        //system("cls");
         printf("\n - Ingresa el DNI buscado: ");
         scanf("%i", &DNI);
         fflush(stdin);
-        if(busquedaDeClienteEnArbol(arbol, DNI)== NULL)
+        if(busquedaDeClienteEnArbol(arbol, DNI)!= NULL)
         {
             mostrarInformacionDelCliente(DNI);
+            printf("\n") ;
             system("pause") ;
         }
         else
         {
-            system("cls");
-            printf("\n\n\t- El DNI NO existe..");
+            ///system("cls");
+            printf("\n\t# El DNI NO existe..\n");
+            system("pause") ;
         }
         menuCliente();
         break;
@@ -387,7 +391,7 @@ void menuCliente()
         Fila nuevaFila;
         inicFila(&nuevaFila);
         while(salida=='s'){
-             system("cls");
+            system("cls");
             limite++;
             printf("ingresar el DNI a eliminar:\n\n Ingresar DNI: ");
             scanf("%i", &DNI);

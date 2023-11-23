@@ -109,12 +109,12 @@ int elegirMarca()
 stAuto cargarUnAuto(int marcaDeAuto)
 {
     stAuto autito;
-/*
-    printf("\n|INGRESAR LA MARCA DEL AUTO|\n ") ;
-    mostrarMarcasOModelos(marcasDeAuto) ;
-    printf("\n\n|OPCIÓN ELEGIDA|: ") ;
-    scanf("%i", &autito.marcasDeAuto) ;
-*/
+    /*
+        printf("\n|INGRESAR LA MARCA DEL AUTO|\n ") ;
+        mostrarMarcasOModelos(marcasDeAuto) ;
+        printf("\n\n|OPCIÓN ELEGIDA|: ") ;
+        scanf("%i", &autito.marcasDeAuto) ;
+    */
     ///printf("\n- Volvamos a la carga general, ingrese nuevamente su marca..") ;
     autito.marcasDeAuto = marcaDeAuto ;
     system("cls") ;
@@ -344,7 +344,7 @@ void modificarEstado()
     if(archivo != NULL)
     {
         char matriculaSeleccionada[5] ;
-        printf("\n- Ingrese la matrícula del auto que quiere alquilar: ") ;
+        printf("\n- Ingrese la matrícula del auto al que quiere dar de baja: ") ;
         fflush(stdin) ;
         gets(matriculaSeleccionada) ;
 
@@ -364,32 +364,46 @@ void modificarEstado()
 }
 
 
-void devolverAuto()
+void devolverAuto(int DNI)
 {
-    char matriculaSeleccionada[5] ;
-    printf("\n- Ingrese la matrícula del auto que quiere devolver: ") ;
-    fflush(stdin) ;
-    gets(matriculaSeleccionada) ;
-
-    float cantKilometros = 0;
-    printf("\n- Ingrese la cantidad de kilometros que recorrió: ") ;
-    scanf("%f", &cantKilometros) ;
-
     stAuto autito;
     FILE* archivo = fopen(ARCHIVO_AUTO, "r+b") ;
     if(archivo != NULL)
     {
+        char matriculaSeleccionada[5] ;
+        printf("\n- Ingrese la matrícula del auto que quiere devolver: ") ;
+        fflush(stdin) ;
+        gets(matriculaSeleccionada) ;
+
         while(fread(&autito, sizeof(stAuto), 1, archivo) > 0)
         {
             if(strcmpi(autito.matricula, matriculaSeleccionada) == 0)
             {
-                autito.disponibilidad = 1; ///NUEVAMENTE DISPONIBLE
-                autito.kilometrosAcumulados = autito.kilometrosAcumulados + cantKilometros ; ///NUEVA CANT. DE KM ACUMULADOS
-                fseek(archivo, (-1)*sizeof(stAuto), SEEK_CUR);
-                fwrite(&autito, sizeof(stAuto), 1, archivo);
-                break;
+                if(autito.dniInquilino == DNI)
+                {
+                    float cantKilometros = 0;
+                    printf("\n- Ingrese la cantidad de kilometros que recorrió: ") ;
+                    scanf("%f", &cantKilometros) ;
+
+                    autito.disponibilidad = 1;///NUEVAMENTE DISPONIBLE
+                    autito.dniInquilino = 0; ///REINICIO EL DNI
+                    autito.kilometrosAcumulados = autito.kilometrosAcumulados + cantKilometros ; ///NUEVA CANT. DE KM ACUMULADOS
+                    fseek(archivo, (-1)*sizeof(stAuto), SEEK_CUR);
+                    fwrite(&autito, sizeof(stAuto), 1, archivo);
+                    break;
+                }
             }
         }
+/*
+        if(autito.dniInquilino != DNI)
+        {
+            printf("\n # No hay ningún auto alquilado con ese DNI.. \n") ;
+        }
+        else if(strcmpi(autito.matricula, matriculaSeleccionada) != 0)
+        {
+            printf("\n\t\t# Matrícula NO encontrada.\n") ;
+        }
+*/
         rewind(archivo) ; ///Reposicionar el indicador de posición al principio
         fclose(archivo) ;
     }
