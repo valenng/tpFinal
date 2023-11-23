@@ -4,52 +4,108 @@
 #include <locale.h>
 
 #include "ArregloDeListas.h"
+#define CANT_MAX_AUTO 5
 
-const char archivoAutos[] = "ArchiAutos" ;
-
-stAutosXMarca buscarAutosXMarca(int marcaActual, stAutosXMarca arregloXMarca[], int cantidad)
+int cargarArregloDeListasAutos(stAutosXMarca arrDeListas[], int validos, int dimension)
 {
-    stAutosXMarca autosXMarcaActual ;
-    int flag = 0;
+        system("cls") ;
+        printf("\n- Hola! Para ingresar un nuevo auto primero debemos saber su marca para poder ubicarlo..\n") ;
 
-    for(int i=0; i<cantidad && !flag; i++)
-    {
-        if(arregloXMarca[i].marcaDeAuto == marcaActual)
-        {
-            autosXMarcaActual = arregloXMarca[i] ;
-            flag = 1;
-        }
-    }
-    if(!flag)
-    {
-        arregloXMarca[cantidad].listaAutos = inicLista() ;
-        arregloXMarca[cantidad].marcaDeAuto = marcaActual ;
-        cantidad++;
-    }
-    return autosXMarcaActual ; ///RETORNA EL ELEMENTO GUARDADO EN EL ARREGLO -> el cual contiene la marca que se busca
+        int marcaDeAuto = elegirMarca() ;
+
+        printf("\n|MARCADEAUTO|: %i", marcaDeAuto) ;
+
+        system("cls") ;
+
+        nodo* listaAutos = cargaGeneralAuto(marcaDeAuto) ;
+
+        validos = alta(arrDeListas, listaAutos, marcaDeAuto, validos) ;
+    return validos ;
 }
 
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 
-void cargarArregloAutos(stAutosXMarca arregloXMarca[])
+int alta(stAutosXMarca arrDeListas[], nodo* listaAutosYaCreada, int marcaDeAuto, int validos)
 {
-    FILE* archivo = fopen(archivoAutos, "rb") ;
+    int posicion = buscarPosMarca(arrDeListas, marcaDeAuto, validos) ;
+    ///printf("\nPosición inicial: %d", posicion);
+    if(posicion == -1)
+    {
+        //printf("\n- Marca NO encontrada. Agregando nueva marca..\n");
+        arrDeListas[validos].marcaDeAuto = marcaDeAuto ;
+        arrDeListas[validos].listaAutos = inicLista() ;
+        validos++;
+        posicion = validos - 1;
+    }
+    ///printf("\nPosición final: %d", posicion);
+    arrDeListas[posicion].listaAutos = agregarAlPrincipio(arrDeListas[posicion].listaAutos, listaAutosYaCreada) ;
+
+    return validos;
+}
+
+int buscarPosMarca(stAutosXMarca arrDeListas[], int marcaDeAuto, int validos)
+{
+    int posicion = -1;
+    int i=0;
+    while((i<validos) && (posicion == -1))
+    {
+        if(arrDeListas[i].marcaDeAuto == marcaDeAuto)
+        {
+            posicion = i ;
+        }
+        i++;
+    }
+    return posicion ;
+}
+
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+
+void mostrarArregloDeListas(stAutosXMarca arrDeListas[], int validos)
+{
+    printf("\n|VAL|: %i", validos) ;
+    for(int i=0; i<validos; i++)
+    {
+        mostrarLista(arrDeListas[i].listaAutos) ;
+    }
+}
+
+///IMPORTANTE
+void funcMenuCargaAutos()
+{
+    int validos = 0;
+    int dimension = 5 ;
+    stAutosXMarca arrDeListas[dimension] ;
+
+    validos = cargarArregloDeListasAutos(arrDeListas, validos, dimension) ;
+}
+
+void funcMenuMostrarListadoGeneral()
+{
+    stAuto autito ;
+    FILE *archivo = fopen(ARCHIVO_AUTO, "rb") ;
     if(archivo != NULL)
     {
-        int cantidad = 0;
-        stAuto autitoAux;
-        nodo* nodoAux;
-        fseek(archivo, 0, SEEK_END) ; ///LLEGO AL FINAL DEL ARCHIVO
-        int cantidadAutos = ftell(archivo) / sizeof(stAuto) ;
-
-        if(cantidadAutos > 0)
+        while(fread(&autito, sizeof(stAuto),1,archivo) > 0)
         {
-            fseek(archivo, 0,SEEK_SET) ; ///POSICIONADO AL INICIO DEL ARCHIVO
-            while(fread(&autitoAux, sizeof(stAuto), 1, archivo)>0) ///LEO EL REGISTRO
+            mostrarUnAuto(autito) ;
+        }
+        fclose(archivo) ;
+    }
+}
+
+void funcMenuMostrarDisponibles()
+{
+    stAuto autito ;
+    FILE *archivo = fopen(ARCHIVO_AUTO, "rb") ;
+    if(archivo != NULL)
+    {
+        while(fread(&autito, sizeof(stAuto),1,archivo) > 0)
+        {
+            if(autito.disponibilidad == 1)
             {
-                int marcaActual = autitoAux.marcasDeAuto;
-                stAutosXMarca autosXMarcaActual = buscarAutosXMarca(marcaActual, arregloXMarca, cantidad) ;
-                nodoAux = crearNodo(autitoAux) ;
-                autosXMarcaActual.listaAutos = agregarAlFinal(autosXMarcaActual.listaAutos, nodoAux) ;
+                mostrarUnAuto(autito) ;
             }
         }
         fclose(archivo) ;
@@ -58,15 +114,28 @@ void cargarArregloAutos(stAutosXMarca arregloXMarca[])
 
 
 
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
 
+void pasarArregloAArchivo(stAutosXMarca arrDeListas[], int validos)
+{
+    FILE* archivo = fopen(ARCHIVO_ARREGLO_AUTOS, "wb");
 
-
-
-
-
-
-
-
-
-
+    if(archivo != NULL)
+    {
+        fwrite(&validos, sizeof(int), 1, archivo);
+        for(int i=0; i<validos; i++)
+        {
+            printf("\nVALOR de i: %i", i) ;
+            fwrite(&(arrDeListas[i].marcaDeAuto), sizeof(int), 1, archivo);
+            nodo* seguidora = arrDeListas[i].listaAutos;
+            while(seguidora != NULL)
+            {
+                fwrite(&(seguidora->autito), sizeof(stAuto), 1, archivo);
+                seguidora = seguidora->siguiente;
+            }
+        }
+        fclose(archivo);
+    }
+}
 

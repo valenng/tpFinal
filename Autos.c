@@ -3,16 +3,10 @@
 #include <string.h>
 #include <locale.h>
 
-#define ARCHIVO_AUTO "ArchiAutos.bin" // const nombre del archivo
-
-#include "Autos.h" ///-> LIB. AUTOS C/PROTOTIPADOS Y ESTRUCTURA
-#include "Prots-LISTAS-autos.h"
+///#include "Autos.h" ///-> LIB. AUTOS C/PROTOTIPADOS Y ESTRUCTURA
+///#include "Prots-LISTAS-autos.h"
 #include "ArregloDeListas.h"
-
-
-
-char maxValorMatricula[3] = {25,25,99} ;
-char ultimaMatricula[3] = {0,0,0} ;
+#define VALOR_ALQUILER 500
 
 char marcasDeAuto[10][20] = {"Toyota", "Fiat", "Citroën", "Audi", "Peugeot", "Volkswagen", "Ford", "Chevrolet", "Renault", "Nissan"} ;
 
@@ -42,6 +36,8 @@ char* modelosPorMarca[10] = {modelosToyota, modelosFiat, modelosCitroen, modelos
 char tipoCombustibles[5][20] = {"Infinia", "Súper", "Infinia Diesel", "Ultra Diesel", "Diesel 500"};
 
 char coloresAutos[5][20] = {"Negro", "Blanco", "Rojo", "Gris", "Azul"} ;
+
+int capacidadMaximaUnAuto = 6 ;
 
 ///MOSTRAMOS TODAS LAS MARCAS O MODELOS
 void mostrarMarcasOModelos(char marcaOModelo[][20])
@@ -82,31 +78,45 @@ void asignarMatricula(char matricula[5])
     matricula[4] = '\0' ;
 }
 
-void nuevaMatriculaR(int ultimaMatricula[3], int maxValues[3], int numElements) ///REVISAR
+int elegirMarca()
 {
-    if (ultimaMatricula[numElements-1] < maxValues[numElements-1])
+    int eleccion = 0;
+
+    do
     {
-        ultimaMatricula[numElements-1] += 1;
-    } else {
-        if (numElements-1 > 0)
+        mostrarMarcasOModelos(marcasDeAuto) ;
+
+        printf("\n\n|OPCIÓN ELEGIDA|: ") ;
+        scanf("%i", &eleccion) ;
+
+        if(eleccion < 1 || eleccion > 10)
         {
-            ultimaMatricula[numElements-1] = 0;
-            nuevaMatriculaR(ultimaMatricula, maxValues, numElements-1);
+            system("cls") ;
+            printf("\n- Opción incorrecta! Ingresa nuevamente la marca.\n") ;
         }
     }
+    while(eleccion < 1 || eleccion > 10) ;
+
+    return eleccion ;
 }
 
+
+
 ///CARGAR UN AUTO
-stAuto cargarUnAuto()
+stAuto cargarUnAuto(int marcaDeAuto)
 {
     stAuto autito;
-
+/*
     printf("\n|INGRESAR LA MARCA DEL AUTO|\n ") ;
     mostrarMarcasOModelos(marcasDeAuto) ;
     printf("\n\n|OPCIÓN ELEGIDA|: ") ;
     scanf("%i", &autito.marcasDeAuto) ;
-
+*/
+    ///printf("\n- Volvamos a la carga general, ingrese nuevamente su marca..") ;
+    autito.marcasDeAuto = marcaDeAuto ;
     system("cls") ;
+
+    printf("\n- Excelente! Empecemos a cargar los datos del auto..\n") ;
 
     printf("\n|ELEGIR MODELO|(MARCA: %s)\n ", marcasDeAuto[autito.marcasDeAuto-1]) ;
     switch(autito.marcasDeAuto)
@@ -145,9 +155,10 @@ stAuto cargarUnAuto()
     printf("\n\n|OPCIÓN ELEGIDA|: ") ;
     scanf("%i", &autito.modelo) ;
 
+    printf("\n- ¡Aclaración!: Nuestros modelos de auto corresponden desde el 2020 al 2023, por favor verificar bien al momento de ingresar su año.\n") ;
     do
     {
-        printf("\n|INGRESAR AÑO DEL AUTO|(MARCA: %s, MODELO: %i): ", marcasDeAuto[autito.marcasDeAuto-1], autito.modelo) ; ///REVISAR CÓMO MOSTRAR EL MODELO
+        printf("\n|INGRESAR AÑO DEL AUTO|(MARCA: %s, MODELO: %i): ", marcasDeAuto[autito.marcasDeAuto-1], autito.modelo) ;
         scanf("%i", &autito.anio) ;
     }
     while(autito.anio < 2020 || autito.anio > 2023) ;
@@ -175,16 +186,21 @@ stAuto cargarUnAuto()
     }
     while(autito.color < 1 || autito.color > 5) ;
 
+    printf("\n- ¡Importante! El límite de capacidad es %i.\n", capacidadMaximaUnAuto) ;
     do
     {
         printf("\n|INGRESE LA CAPACIDAD DEL AUTO|: ") ;
         scanf("%i", &autito.capacidad) ;
     }
-    while(autito.capacidad < 0) ;
+    while(autito.capacidad < 0 || autito.capacidad > 6) ;
 
 
-    printf("\n|INGRESAR LA CANTIDAD DE KM ACUMULADOS|: ") ;
-    scanf("%f", &autito.kilometrosAcumulados) ;
+    do
+    {
+        printf("\n|INGRESAR LA CANTIDAD DE KM ACUMULADOS|: ") ;
+        scanf("%f", &autito.kilometrosAcumulados) ;
+    }
+    while(autito.kilometrosAcumulados < 0) ;
 
     do
     {
@@ -220,12 +236,13 @@ void mostrarUnAuto(stAuto autito)
 //-----------------------------------------------------------------------
 //-----------------------------------------------------------------------
 
-void cargarArchivoDeAutos()
+void cargarArchivoDeAutos(int marcaDeAuto)
 {
+    stAuto autito ;
     FILE *archivo = fopen(ARCHIVO_AUTO, "ab") ;
     if(archivo != NULL)
     {
-        stAuto autito = cargarUnAuto() ;
+        autito = cargarUnAuto(marcaDeAuto) ;
         fwrite(&autito, sizeof(stAuto), 1, archivo) ;
         fclose(archivo) ;
     }
@@ -234,125 +251,108 @@ void cargarArchivoDeAutos()
 //-----------------------------------------------------------------------
 //-----------------------------------------------------------------------
 
-nodo* pasarArchivoALista(nodo* listaAutos)
+///FUNCIONES PARA CALCULAR LA TARIFA DE UN AUTO.
+
+void ingresarMatriculaYCalcularTarifa()
+{
+    char matricula[5] ;
+    printf("\n- Ingrese la matrícula buscada: ") ;
+    fflush(stdin) ;
+    gets(matricula) ;
+
+    int tarifa = calcularTarifa(matricula) ;
+    printf("\n- Su tarifa final es: $%i", tarifa) ;
+}
+
+int calcularTarifa(char matriculaSeleccionada[])
+{
+    int cantidadDias, tarifa = 0;
+    stAuto autito ;
+
+    FILE* archivo = fopen(ARCHIVO_AUTO, "rb") ;
+    if(archivo != NULL)
+    {
+        printf("\n\t\t|CÁLCULO DE TARIFAS|\n") ;
+        printf("\t# Valor del alquiler: $500 por día.\n") ;
+        printf("\n- Ingrese cuántos días quiere alquilar el auto: ") ;
+        scanf("%i", &cantidadDias) ;
+
+        while(fread(&autito, sizeof(stAuto), 1, archivo) > 0)
+        {
+            if(strcmpi(autito.matricula, matriculaSeleccionada) == 0)
+            {
+                tarifa = (cantidadDias * VALOR_ALQUILER) + autito.valorInicial;
+                break;
+            }
+        }
+        fclose(archivo) ;
+    }
+    return tarifa;
+}
+
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+
+void alquilarUnAuto()
+{
+    modificarEstado() ;
+}
+
+void modificarEstado()
 {
     stAuto autito;
-    FILE *archivo = fopen(ARCHIVO_AUTO, "rb") ;
+    FILE* archivo = fopen(ARCHIVO_AUTO, "r+b") ;
+    if(archivo != NULL)
+    {
+        char matriculaSeleccionada[5] ;
+        printf("\n- Ingrese la matrícula del auto que quiere alquilar: ") ;
+        fflush(stdin) ;
+        gets(matriculaSeleccionada) ;
+
+        while(fread(&autito, sizeof(stAuto), 1, archivo) > 0)
+        {
+            if(strcmpi(autito.matricula, matriculaSeleccionada) == 0) //SON IGUALES
+            {
+                autito.disponibilidad = 0; //PASA A NO ESTAR DISPONIBLE
+                fseek(archivo, (-1)*sizeof(stAuto), SEEK_CUR);
+                fwrite(&autito, sizeof(stAuto), 1, archivo);
+                break;
+            }
+        }
+        rewind(archivo) ; ///Reposicionar el indicador de posición al principio
+        fclose(archivo) ;
+    }
+}
+
+
+void devolverAuto()
+{
+    char matriculaSeleccionada[5] ;
+    printf("\n- Ingrese la matrícula del auto que quiere devolver: ") ;
+    fflush(stdin) ;
+    gets(matriculaSeleccionada) ;
+
+    float cantKilometros = 0;
+    printf("\n- Ingrese la cantidad de kilometros que recorrió: ") ;
+    scanf("%f", &cantKilometros) ;
+
+    stAuto autito;
+    FILE* archivo = fopen(ARCHIVO_AUTO, "r+b") ;
     if(archivo != NULL)
     {
         while(fread(&autito, sizeof(stAuto), 1, archivo) > 0)
         {
-            nodo* nuevoNodo = crearNodo(autito) ;
-            listaAutos = agregarAlPrincipio(listaAutos, nuevoNodo) ;
+            if(strcmpi(autito.matricula, matriculaSeleccionada) == 0)
+            {
+                autito.disponibilidad = 1; ///NUEVAMENTE DISPONIBLE
+                autito.kilometrosAcumulados = autito.kilometrosAcumulados + cantKilometros ; ///NUEVA CANT. DE KM ACUMULADOS
+                fseek(archivo, (-1)*sizeof(stAuto), SEEK_CUR);
+                fwrite(&autito, sizeof(stAuto), 1, archivo);
+                break;
+            }
         }
-        fclose(archivo) ;
-    }
-    return listaAutos ;
-}
-
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-
-void pasarListaAArchivoWB(nodo* listaAutos)
-{
-    FILE* archivo = fopen(ARCHIVO_AUTO, "wb") ;
-    if(archivo != NULL)
-    {
-        while(listaAutos != NULL)
-        {
-            fwrite((&listaAutos->autito), sizeof(stAuto), 1, archivo) ;
-            listaAutos = listaAutos->siguiente ;
-        }
+        rewind(archivo) ; ///Reposicionar el indicador de posición al principio
         fclose(archivo) ;
     }
 }
 
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-
-char buscarMatricula(FILE* archivo)
-{
-    stAuto autito;
-    char matricula[5] ;
-    int i=0;
-    int posicion = -1;
-
-    printf("\n|INGRESE LA MATRICULA BUSCADA|: ") ;
-    fflush(stdin) ;
-    gets(matricula) ;
-    while(fread(&autito, sizeof(stAuto), 1, archivo) > 0)
-    {
-        printf("\n|INGRESE LA MATRICULA BUSCADA|: ") ;
-        fflush(stdin) ;
-        gets(matricula) ;
-
-        if(strcmpi(autito.matricula, matricula) == 0)
-        {
-            posicion = i;
-            i++;
-        }
-    }
-    return posicion ;
-}
-
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-
-void ingresarMatricula(char matricula[5])
-{
-    printf("\n|INGRESE LA MATRICULA BUSCADA|: ") ;
-    fflush(stdin) ;
-    gets(matricula) ;
-}
-
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-
-void borrarUnAutoDelArchivo()
-{
-    char matricula[5] ;
-    FILE* archivo = fopen(ARCHIVO_AUTO, "rb") ;
-    if(archivo != NULL)
-    {
-        nodo* aux = pasarArchivoALista(archivo) ;
-        ingresarMatricula(matricula) ;
-        aux = eliminarNodo(aux, matricula) ;
-        fclose(archivo) ;
-        pasarListaAArchivoWB(aux) ;
-    }
-}
-
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-
-void buscarAuto(int marcaAuto)
-{
-    stAutosXMarca* autosXMarca = (stAutosXMarca*) malloc(10*sizeof(stAutosXMarca)) ;
-    cargarArregloAutos(autosXMarca) ;
-
-    int flag = 0;
-
-    stAutosXMarca autoDeLaMarca ;
-
-    for(int i=0; i<10 && !flag; i++)
-    {
-        if(autosXMarca[i].marcaDeAuto == marcaAuto)
-        {
-            autoDeLaMarca = autosXMarca[i] ;
-            flag = 1;
-        }
-    }
-    if(!flag)
-    {
-        printf("\n|NO SE ENCONTRÓ LA MARCA|.\n") ;
-    }
-    else
-    {
-        for(int j=0; j < sizeof(autoDeLaMarca.listaAutos); j++)
-        {
-            mostrarUnAuto(autoDeLaMarca.listaAutos[j].autito) ;
-        }
-    }
-}
-
-///FUNCIÓN PARA CALCULAR LA TARIFA DE UN AUTO.

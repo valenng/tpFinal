@@ -229,61 +229,51 @@ void administracion()
 
 void menuAutos()
 {
-
     system("cls");
     int opcion;
 
-    printf("\nMenu autos\n\n\n") ; ///
+    printf("\n\t\t|MENÚ AUTOS|") ;
+    printf("\n\t\t------------\n") ;
+    printf("\n\t|Ingrese qué desea realizar..|\n") ;
 
-    printf("    1)Lista de autos\n    2)Busqueda De Auto\n    3)Autos disponibles\n    4)Agregar autos\n    5)Modificar auto\n    6)Eliminar auto\n    7)Volver al menu\n\n   ingresar opcion: ");
+    printf("\n[ 1 ] Agregar autos..") ;
+    printf("\n[ 2 ] Autos disponibles..") ;
+    printf("\n[ 3 ] Calcular tarifa (por matrícula)..") ;
+    printf("\n[ 4 ] Dar de baja un auto..") ;
+    printf("\n[ 5 ] Mostrar listado de autos..") ;
+    printf("\n[ 6 ] Volver..") ;
+    printf("\n\n\t|OPCIÓN ELEGIDA|: ") ;
     scanf("%i", &opcion);
 
     switch(opcion)
     {
-
-    case 1:
-        /// falta funcion
-
+        case 1: ///AGREGAR AUTOS
+            system("cls") ;
+            funcMenuCargaAutos();
         break;
 
-    case 2:
-        /// falta funcion
-
+        case 2: ///AUTOS DISPONIBLES
+            funcMenuMostrarDisponibles() ;
         break;
 
-    case 3:
-        /// falta funcion
-
-        break;
-    case 4:
-        /// falta funcion
-
-        break;
-    case 5:
-        /// falta funcion
-
+        case 3: ///BÚSQUEDA DE UN AUTO
+            ingresarMatriculaYCalcularTarifa() ;
         break;
 
-    case 6:
-        /// falta funcion
-
-        break;
-    case 7:
-
-        menu();
-
+        case 4: ///MODIFICAR ESTADO
+            modificarEstado() ;
         break;
 
-    default:
-
+        case 5: ///LISTA DE AUTOS
+            funcMenuMostrarListadoGeneral() ;
         break;
 
-
+        case 6:
+            ///VOLVER
+        break;
     }
-
-
-
 }
+
 
 void menuCliente()
 {

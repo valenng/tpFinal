@@ -12,13 +12,12 @@ typedef struct
 nodo* inicLista() ;
 nodo* crearNodo(stAuto) ;
 nodo* agregarAlPrincipio(nodo*, nodo*) ;
+nodo* agregarAlFinal(nodo*, nodo*);
 
-nodo* cargarListaDeAutos(nodo* listaAutos) ;
+nodo* pasarArchivoALista() ;
+nodo* cargaGeneralAuto(int) ;
 
-nodo* agregarEnOrden(nodo*, nodo*) ;
-void escribir(nodo*) ;
-void recorrerYMostrarLista(nodo* lista);
-void mostrarInformacionAutoLista(nodo* nodo);
+void mostrarNodo(nodo*) ;
 
 nodo* eliminarNodo(nodo*, char[]) ;
 

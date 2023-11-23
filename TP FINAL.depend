@@ -1,19 +1,17 @@
 # depslib dependency file v1.0
-1699556361 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.c
+1700711339 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
-	"Autos.h"
-	"Prots-LISTAS-autos.h"
 	"ArregloDeListas.h"
 
-1699556079 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.h
+1700619671 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\autos.h
 
-1699456253 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\prots-listas-autos.h
+1700619671 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\prots-listas-autos.h
 	"Autos.h"
 
-1699540389 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.c
+1700711647 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -21,27 +19,26 @@
 	"Clientes.h"
 	"arbolGeneral.h"
 
-1698935399 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.h
+1700711647 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\clientes.h
 
-1698787839 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\listas2clientes.h
+1700711647 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\listas2clientes.h
 	"Clientes.h"
 
-1699546559 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\func-listas-autos.c
+1700706693 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\func-listas-autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"Prots-LISTAS-autos.h"
-	"Autos.h"
 
-1699064009 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\listas2clientes.c
+1700711647 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\listas2clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"listas2Clientes.h"
 
-1699556437 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\main.c
+1700711647 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -49,9 +46,9 @@
 	"menu.h"
 	"Autos.h"
 
-1698788979 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.h
+1700711647 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.h
 
-1699556409 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.c
+1700711861 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -61,8 +58,9 @@
 	"menu.h"
 	"listas2Clientes.h"
 	"arbolGeneral.h"
+	"filas.h"
 
-1699540389 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arbolgeneral.c
+1700711647 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arbolgeneral.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
@@ -70,7 +68,7 @@
 	"Autos.h"
 	"arbolGeneral.h"
 
-1699540389 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arbolgeneral.h
+1700711647 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arbolgeneral.h
 	"Autos.h"
 	"Clientes.h"
 	"menu.h"
@@ -374,14 +372,14 @@
 	"Prots-LISTAS-autos.h"
 	"ArregloDeListas.h"
 
-1699556026 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arreglodelistas.c
+1700710614 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arreglodelistas.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<locale.h>
 	"ArregloDeListas.h"
 
-1699556275 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arreglodelistas.h
+1700621491 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\arreglodelistas.h
 	"Prots-LISTAS-autos.h"
 
 1699569385 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\tpfinal\arreglodelistas.c
@@ -434,4 +432,16 @@
 
 1700699560 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\pila.h
 	"Prots-LISTAS-autos.h"
+
+1700711647 source:c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\pila.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Pila.h"
+
+1700711647 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\pila.h
+	"Prots-LISTAS-autos.h"
+
+1700711647 c:\users\valen\onedrive\escritorio\tp final lab2\tpfinal\filas.h
 
