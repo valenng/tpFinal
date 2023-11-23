@@ -85,25 +85,32 @@ nodo* agregarEnOrden(nodo* lista, nodo* nuevoNodo)
         }
     return lista;
 }
-
-void escribir(nodo* seguidora)
+*/
+void mostrarInformacionAutoLista(nodo* nodo)
 {
-    printf("\n-------------------------------------") ;
-    printf("\n|NOMBRE|: %s", seguidora->persona.nombre) ;
-    printf("\n|EDAD|: %i", seguidora->persona.edad) ;
-    printf("\n-------------------------------------\n") ;
+    stAuto autoInfo = nodo->autito;
+    printf("Marcas de Auto: %d\n", autoInfo.marcasDeAuto);
+    printf("Modelo: %d\n", autoInfo.modelo);
+    printf("Año: %d\n", autoInfo.anio);
+    printf("Tipo de Combustible: %d\n", autoInfo.tipoDeCombustible);
+    printf("Matrícula: %s\n", autoInfo.matricula);
+    printf("Color: %d\n", autoInfo.color);
+    printf("Capacidad: %d\n", autoInfo.capacidad);
+    printf("Kilómetros Acumulados: %.2f\n", autoInfo.kilometrosAcumulados);
+    printf("Valor Inicial: %.2f\n", autoInfo.valorInicial);
+    printf("Disponibilidad: %s\n", (autoInfo.disponibilidad == 1) ? "DISPONIBLE" : "NO DISPONIBLE");
 }
 
-void recorrerYMostrar(nodo* lista)
+void recorrerYMostrarLista(nodo* lista)
 {
     nodo* seguidora = lista;
     while(seguidora != NULL)
     {
-        escribir(seguidora) ;
+        mostrarInformacionAutoLista(seguidora) ;
         seguidora = seguidora->siguiente ;
     }
 }
-*/
+
 nodo* eliminarNodo(nodo* lista, char matricula[])
 {
     nodo* aux;

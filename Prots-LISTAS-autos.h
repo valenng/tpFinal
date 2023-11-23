@@ -17,6 +17,8 @@ nodo* cargarListaDeAutos(nodo* listaAutos) ;
 
 nodo* agregarEnOrden(nodo*, nodo*) ;
 void escribir(nodo*) ;
+void recorrerYMostrarLista(nodo* lista);
+void mostrarInformacionAutoLista(nodo* nodo);
 
 nodo* eliminarNodo(nodo*, char[]) ;
 

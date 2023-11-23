@@ -177,7 +177,7 @@
 	"Prots-LISTAS-autos.h"
 	"ArregloDeListas.h"
 
-1700683209 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\prots-listas-autos.h
+1700699566 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\prots-listas-autos.h
 	"Autos.h"
 
 1700614456 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\clientes.c
@@ -191,7 +191,7 @@
 1700614456 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\listas2clientes.h
 	"Clientes.h"
 
-1700614456 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\func-listas-autos.c
+1700696206 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\func-listas-autos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -413,5 +413,24 @@
 	"ArregloDeListas.h"
 
 1700614456 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\arreglodelistas.h
+	"Prots-LISTAS-autos.h"
+
+1700685664 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\filas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"filas.h"
+
+1700685271 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\filas.h
+
+1700696206 source:e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\pila.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<locale.h>
+	"Pila.h"
+
+1700696297 e:\programacion\utn\1 a—o\programacion y laboratorio 2\tpautofinal\tpfinal\pila.h
 	"Prots-LISTAS-autos.h"
 
