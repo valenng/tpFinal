@@ -28,6 +28,8 @@ void crearNuevoUsuario()
     printf("\nIngresar el DNI de %s %s\n\nIngresar DNI:  ", nuevoCliente.nombre, nuevoCliente.apellido);
     scanf("%i", &nuevoCliente.DNI);
 
+    nuevoCliente.estadoDeAlquiler = 0;
+
 ///---------
 /// verificar estado de DNI y carga EN EL ARBOL en el arhivo
 

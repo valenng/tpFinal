@@ -151,10 +151,10 @@ void mostrarLista2(nodo2* lista)
 
     nodo2* lista2 = lista;
 
-    while(lista2 == NULL)
+    while(lista2 != NULL)
     {
 
-        printf("datitpo");
+        printf(" %i -", lista->dato);
         lista2 = lista2->ste;
 
     }

@@ -8,7 +8,7 @@ typedef struct
     char apellido[20];
     int DNI;
     int licencia; // 1 si -  2 no
-
+    int estadoDeAlquiler; // 1 si -  2 no
 
 }stClientes;
 
